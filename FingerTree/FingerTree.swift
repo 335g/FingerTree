@@ -2,7 +2,12 @@
 
 
 
-
+enum Digit<T> {
+	case One(T)
+	case Two(T, T)
+	case Three(T, T, T)
+	case Four(T, T, T, T)
+}
 
 protocol Semigroup {
 	func mappend(other: Self) -> Self
