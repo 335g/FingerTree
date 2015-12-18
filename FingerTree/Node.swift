@@ -16,3 +16,13 @@ extension Node {
 		}
 	}
 }
+
+public func nodeToDigit<V, A>(node: Node<V, A>) -> Digit<A> {
+	switch node {
+	case let .Node2(_, a, b):
+		return .Two(a, b)
+		
+	case let .Node3(_, a, b, c):
+		return .Three(a, b, c)
+	}
+}
