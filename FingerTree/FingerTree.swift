@@ -9,6 +9,11 @@ enum Digit<T> {
 	case Four(T, T, T, T)
 }
 
+enum Node<T, U> {
+	case Node2(T, U, U)
+	case Node3(T, U, U, U)
+}
+
 protocol Semigroup {
 	func mappend(other: Self) -> Self
 }
