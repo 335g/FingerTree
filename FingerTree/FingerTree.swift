@@ -14,6 +14,10 @@ public enum FingerTree<T, U> {
 	public static func single(value: U) -> FingerTree {
 		return Single(value)
 	}
+	
+	public static func deep(lhs: Digit<U>, fingerTree: FingerTree<T, Node<T, U>>, rhs: Digit<U>) -> FingerTree {
+		return Deep(lhs, fingerTree, rhs)
+	}
 }
 
 
