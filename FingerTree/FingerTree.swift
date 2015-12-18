@@ -22,7 +22,6 @@ public enum FingerTree<Value, Annotation> {
 	}
 }
 
-
 public enum Digit<T> {
 	case One(T)
 	case Two(T, T)
