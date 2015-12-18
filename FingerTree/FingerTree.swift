@@ -22,12 +22,7 @@ public enum FingerTree<Value, Annotation> {
 	}
 }
 
-public enum Digit<T> {
-	case One(T)
-	case Two(T, T)
-	case Three(T, T, T)
-	case Four(T, T, T, T)
-}
+
 
 public enum Node<T, U> {
 	case Node2(T, U, U)
