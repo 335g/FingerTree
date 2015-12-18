@@ -10,6 +10,10 @@ public enum FingerTree<T, U> {
 	static func empty() -> FingerTree {
 		return .Empty
 	}
+	
+	static func single(a: U) -> FingerTree {
+		return .Single(a)
+	}
 }
 
 
