@@ -1,15 +1,22 @@
 //  Copyright © 2015 Yoshiki Kudo. All rights reserved.
 
 
+public enum FingerTree<T, U> {
+	
+	case Empty
+	case Single(U)
+	indirect case Deep(Digit<U>, FingerTree<T, Node<T, U>>, Digit<U>)
+}
 
-enum Digit<T> {
+
+public enum Digit<T> {
 	case One(T)
 	case Two(T, T)
 	case Three(T, T, T)
 	case Four(T, T, T, T)
 }
 
-enum Node<T, U> {
+public enum Node<T, U> {
 	case Node2(T, U, U)
 	case Node3(T, U, U, U)
 }
