@@ -7,7 +7,7 @@ public enum Digit<T> {
 	case Four(T, T, T, T)
 }
 
-extension Digit where T: Monoid {
+extension Digit {
 	func foldMap<U: Monoid>(f: T -> U) -> U {
 		switch self {
 		case let .One(a):
