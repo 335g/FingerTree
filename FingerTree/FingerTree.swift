@@ -6,6 +6,10 @@ public enum FingerTree<T, U> {
 	case Empty
 	case Single(U)
 	indirect case Deep(Digit<U>, FingerTree<T, Node<T, U>>, Digit<U>)
+	
+	static func empty() -> FingerTree {
+		return .Empty
+	}
 }
 
 
