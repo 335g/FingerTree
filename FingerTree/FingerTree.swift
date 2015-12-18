@@ -7,12 +7,12 @@ public enum FingerTree<T, U> {
 	case Single(U)
 	indirect case Deep(Digit<U>, FingerTree<T, Node<T, U>>, Digit<U>)
 	
-	static func empty() -> FingerTree {
-		return .Empty
+	public static func empty() -> FingerTree {
+		return Empty
 	}
 	
-	static func single(a: U) -> FingerTree {
-		return .Single(a)
+	public static func single(value: U) -> FingerTree {
+		return Single(value)
 	}
 }
 
