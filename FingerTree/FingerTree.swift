@@ -23,11 +23,3 @@ public enum FingerTree<Value, Annotation> {
 }
 
 
-
-public enum Node<T, U> {
-	case Node2(T, U, U)
-	case Node3(T, U, U, U)
-}
-
-
-
