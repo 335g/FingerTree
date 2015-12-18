@@ -5,7 +5,7 @@
 
 
 protocol Semigroup {
-	func op(other: Self) -> Self
+	func mappend(other: Self) -> Self
 }
 
 infix operator <> {
@@ -14,7 +14,7 @@ infix operator <> {
 }
 
 func <> <S: Semigroup>(lhs: S, rhs: S) -> S {
-	return lhs.op(rhs)
+	return lhs.mappend(rhs)
 }
 
 func sconcat <S: Semigroup>(initial: S, t: [S]) -> S {
