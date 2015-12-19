@@ -15,7 +15,6 @@
 		84A2EB491C243A4800A8C3B9 /* Digit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A2EB481C243A4800A8C3B9 /* Digit.swift */; };
 		84A2EB4B1C243A7700A8C3B9 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A2EB4A1C243A7700A8C3B9 /* Node.swift */; };
 		84A2EB4E1C24EE4C00A8C3B9 /* MeasuredType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A2EB4D1C24EE4C00A8C3B9 /* MeasuredType.swift */; };
-		84A2EB501C24F1D700A8C3B9 /* Prelude.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A2EB4F1C24F1D700A8C3B9 /* Prelude.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +39,6 @@
 		84A2EB481C243A4800A8C3B9 /* Digit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Digit.swift; sourceTree = "<group>"; };
 		84A2EB4A1C243A7700A8C3B9 /* Node.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
 		84A2EB4D1C24EE4C00A8C3B9 /* MeasuredType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeasuredType.swift; sourceTree = "<group>"; };
-		84A2EB4F1C24F1D700A8C3B9 /* Prelude.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Prelude.framework; path = ../Carthage/Checkouts/Prelude/build/Debug/Prelude.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,7 +46,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84A2EB501C24F1D700A8C3B9 /* Prelude.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,7 +87,6 @@
 				84A2EB4D1C24EE4C00A8C3B9 /* MeasuredType.swift */,
 				84A2EB481C243A4800A8C3B9 /* Digit.swift */,
 				84A2EB4A1C243A7700A8C3B9 /* Node.swift */,
-				84A2EB4F1C24F1D700A8C3B9 /* Prelude.framework */,
 				84A2EB2B1C24283100A8C3B9 /* Info.plist */,
 			);
 			path = FingerTree;
