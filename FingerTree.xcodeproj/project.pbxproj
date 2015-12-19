@@ -17,6 +17,7 @@
 		84A2EB4E1C24EE4C00A8C3B9 /* MeasuredType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A2EB4D1C24EE4C00A8C3B9 /* MeasuredType.swift */; };
 		84A2EB531C25439300A8C3B9 /* Operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A2EB521C25439300A8C3B9 /* Operator.swift */; };
 		84A2EB551C25688600A8C3B9 /* Concatenation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A2EB541C25688600A8C3B9 /* Concatenation.swift */; };
+		84C4B6C51C261CBF0077C1DA /* Split.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C4B6C41C261CBF0077C1DA /* Split.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,7 @@
 		84A2EB4D1C24EE4C00A8C3B9 /* MeasuredType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeasuredType.swift; sourceTree = "<group>"; };
 		84A2EB521C25439300A8C3B9 /* Operator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operator.swift; sourceTree = "<group>"; };
 		84A2EB541C25688600A8C3B9 /* Concatenation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Concatenation.swift; sourceTree = "<group>"; };
+		84C4B6C41C261CBF0077C1DA /* Split.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Split.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 				84A2EB4A1C243A7700A8C3B9 /* Node.swift */,
 				84A2EB521C25439300A8C3B9 /* Operator.swift */,
 				84A2EB541C25688600A8C3B9 /* Concatenation.swift */,
+				84C4B6C41C261CBF0077C1DA /* Split.swift */,
 				84A2EB2B1C24283100A8C3B9 /* Info.plist */,
 			);
 			path = FingerTree;
@@ -217,6 +220,7 @@
 			files = (
 				84A2EB451C24316600A8C3B9 /* TypeClass.swift in Sources */,
 				84A2EB4B1C243A7700A8C3B9 /* Node.swift in Sources */,
+				84C4B6C51C261CBF0077C1DA /* Split.swift in Sources */,
 				84A2EB551C25688600A8C3B9 /* Concatenation.swift in Sources */,
 				84A2EB4E1C24EE4C00A8C3B9 /* MeasuredType.swift in Sources */,
 				84A2EB411C2428F500A8C3B9 /* FingerTree.swift in Sources */,

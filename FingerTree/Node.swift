@@ -26,35 +26,6 @@ public enum Node<V: Monoid, A: MeasuredType where V == A.MeasuredValue> {
 			return Node<V1, A1>.node3(f(a), f(b), f(c))
 		}
 	}
-	
-	// MARK: - split
-	
-	public func splitNode(predicate: V -> Bool) -> V -> Node -> Split<Digit<A>?, A> {
-		return { i in
-			{ node in
-				switch node {
-				case let .Node2(_, a, b):
-					if predicate(i.mappend(a.measure())) {
-						return .Split(nil, a, .One(b))
-					}else {
-						return .Split(.One(a), b, nil)
-					}
-				
-				case let .Node3(_, a, b, c):
-					let va = i.mappend(a.measure())
-					let vab = va.mappend(b.measure())
-					
-					if predicate(va) {
-						return .Split(nil, a, .Two(b, c))
-					}else if predicate(vab) {
-						return .Split(.One(a), b, .One(c))
-					}else {
-						return .Split(.Two(a, b), c, nil)
-					}
-				}
-			}
-		}
-	}
 }
 
 // MARK: - Foldable
