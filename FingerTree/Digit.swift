@@ -5,6 +5,22 @@ public enum Digit<A: MeasuredType> {
 	case Two(A, A)
 	case Three(A, A, A)
 	case Four(A, A, A, A)
+	
+	public func map<B>(f: A -> B) -> Digit<B> {
+		switch self {
+		case let .One(a):
+			return .One(f(a))
+			
+		case let .Two(a, b):
+			return .Two(f(a), f(b))
+			
+		case let .Three(a, b, c):
+			return .Three(f(a), f(b), f(c))
+			
+		case let .Four(a, b, c, d):
+			return .Four(f(a), f(b), f(c), f(d))
+		}
+	}
 }
 
 extension Digit: Foldable {
