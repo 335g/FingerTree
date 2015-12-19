@@ -344,7 +344,67 @@ public func addDigits2<V, A>(tree: FingerTree<V, Node<V, A>>) -> Digit<A> -> A -
 }
 
 public func addDigits3<V, A>(tree: FingerTree<V, Node<V, A>>) -> Digit<A> -> A -> A -> A -> Digit<A> -> FingerTree<V, Node<V, A>> -> FingerTree<V, Node<V, A>> {
-	fatalError()
+	return { digit in
+		{ a0 in
+			{ b0 in
+				{ c0 in
+					{ digit1 in
+						{ tree1 in
+							switch (digit, digit1) {
+							case let (.One(a), .One(a1)):
+								return appendTree2(tree)(Node.node3(a, a0, b0))(Node.node2(c0, a1))(tree1)
+								
+							case let (.One(a), .Two(a1, b1)):
+								return appendTree2(tree)(Node.node3(a, a0, b0))(Node.node3(c0, a1, b1))(tree1)
+								
+							case let (.One(a), .Three(a1, b1, c1)):
+								return appendTree3(tree)(Node.node3(a, a0, b0))(Node.node2(c0, a1))(Node.node2(b1, c1))(tree1)
+								
+							case let (.One(a), .Four(a1, b1, c1, d1)):
+								return appendTree3(tree)(Node.node3(a, a0, b0))(Node.node3(c0, a1, b1))(Node.node2(c1, d1))(tree1)
+								
+							case let (.Two(a, b), .One(a1)):
+								return appendTree2(tree)(Node.node3(a, b, a0))(Node.node3(b0, c0, a1))(tree1)
+								
+							case let (.Two(a, b), .Two(a1, b1)):
+								return appendTree3(tree)(Node.node3(a, b, a0))(Node.node2(b0, c0))(Node.node2(a1, b1))(tree1)
+								
+							case let (.Two(a, b), .Three(a1, b1, c1)):
+								return appendTree3(tree)(Node.node3(a, b, a0))(Node.node3(b0, c0, a1))(Node.node2(b1, c1))(tree1)
+								
+							case let (.Two(a, b), .Four(a1, b1, c1, d1)):
+								return appendTree3(tree)(Node.node3(a, b, a0))(Node.node3(b0, c0, a1))(Node.node3(b1, c1, d1))(tree1)
+								
+							case let (.Three(a, b, c), .One(a1)):
+								return appendTree3(tree)(Node.node3(a, b, c))(Node.node2(a0, b0))(Node.node2(c0, a1))(tree1)
+								
+							case let (.Three(a, b, c), .Two(a1, b1)):
+								return appendTree3(tree)(Node.node3(a, b, c))(Node.node3(a0, b0, c0))(Node.node2(a1, b1))(tree1)
+								
+							case let (.Three(a, b, c), .Three(a1, b1, c1)):
+								return appendTree3(tree)(Node.node3(a, b, c))(Node.node3(a0, b0, c0))(Node.node3(a1, b1, c1))(tree1)
+								
+							case let (.Three(a, b, c), .Four(a1, b1, c1, d1)):
+								return appendTree4(tree)(Node.node3(a, b, c))(Node.node3(a0, b0, c0))(Node.node2(a1, b1))(Node.node2(c1, d1))(tree1)
+								
+							case let (.Four(a, b, c, d), .One(a1)):
+								return appendTree3(tree)(Node.node3(a, b, c))(Node.node3(d, a0, b0))(Node.node2(c0, a1))(tree1)
+								
+							case let (.Four(a, b, c, d), .Two(a1, b1)):
+								return appendTree3(tree)(Node.node3(a, b, c))(Node.node3(d, a0, b0))(Node.node3(c0, a1, b1))(tree1)
+								
+							case let (.Four(a, b, c, d), .Three(a1, b1, c1)):
+								return appendTree4(tree)(Node.node3(a, b, c))(Node.node3(d, a0, b0))(Node.node2(c0, a1))(Node.node2(b1, c1))(tree1)
+								
+							case let (.Four(a, b, c, d), .Four(a1, b1, c1, d1)):
+								return appendTree4(tree)(Node.node3(a, b, c))(Node.node3(d, a0, b0))(Node.node3(c0, a1, b1))(Node.node2(c1, d1))(tree1)
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 }
 
 public func addDigits4<V, A>(tree: FingerTree<V, Node<V, A>>) -> Digit<A> -> A -> A -> A -> A -> Digit<A> -> FingerTree<V, Node<V, A>> -> FingerTree<V, Node<V, A>> {
