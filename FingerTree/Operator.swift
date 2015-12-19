@@ -16,7 +16,11 @@ public func |> <V, A> (tree: FingerTree<V, A>, value: A) -> FingerTree<V, A> {
 		return FingerTree<V, A>.single(value)
 		
 	case let .Single(a):
-		return FingerTree<V, A>.deep(.One(a), deeper: .Empty, suffix: .One(value))
+		return FingerTree<V, A>.deep(
+			prefix: .One(a),
+			deeper: .Empty,
+			suffix: .One(value)
+		)
 		
 	case let .Deep(v, prefix, deeper, suffix):
 		switch suffix {
@@ -41,7 +45,11 @@ public func <| <V, A> (value: A, tree: FingerTree<V, A>) -> FingerTree<V, A> {
 		return FingerTree<V, A>.single(value)
 		
 	case let .Single(a):
-		return FingerTree<V, A>.deep(.One(a), deeper: .Empty, suffix: .One(value))
+		return FingerTree<V, A>.deep(
+			prefix: .One(a),
+			deeper: .Empty,
+			suffix: .One(value)
+		)
 
 	case let .Deep(v, prefix, deeper, suffix):
 		switch prefix {

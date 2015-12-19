@@ -16,7 +16,7 @@ public enum FingerTree<V: Monoid, A: MeasuredType where V == A.MeasuredValue> {
 		return Single(a)
 	}
 	
-	public static func deep(prefix: Digit<A>, deeper: FingerTree<V, Node<V, A>>, suffix: Digit<A>) -> FingerTree {
+	public static func deep(prefix prefix: Digit<A>, deeper: FingerTree<V, Node<V, A>>, suffix: Digit<A>) -> FingerTree {
 		
 		return .Deep(deeper.mappendVal(prefix.measure()), prefix, deeper, suffix)
 	}
@@ -32,9 +32,11 @@ public enum FingerTree<V: Monoid, A: MeasuredType where V == A.MeasuredValue> {
 			return FingerTree<V1, A1>.single(f(a))
 			
 		case let .Deep(_, prefix, deeper, suffix):
-			return FingerTree<V1, A1>.deep(prefix.map(f),
+			return FingerTree<V1, A1>.deep(
+				prefix: prefix.map(f),
 				deeper: deeper.map({ $0.map(f) }),
-				suffix: suffix.map(f))
+				suffix: suffix.map(f)
+			)
 		}
 	}
 	
