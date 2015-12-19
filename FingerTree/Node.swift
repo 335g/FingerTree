@@ -5,7 +5,7 @@ public enum Node<T, U> {
 	case Node3(T, U, U, U)
 }
 
-extension Node {
+extension Node: Foldable {
 	public func foldMap<V: Monoid>(f: U -> V) -> V {
 		switch self {
 		case let .Node2(_, a, b):

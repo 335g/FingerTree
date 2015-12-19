@@ -20,3 +20,8 @@ public func sconcat <S: Semigroup>(initial: S, t: [S]) -> S {
 public protocol Monoid: Semigroup {
 	static var mempty: Self { get }
 }
+
+public protocol Foldable {
+	typealias T
+	func foldMap<M: Monoid>(f: T -> M) -> M
+}
