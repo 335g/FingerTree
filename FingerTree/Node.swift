@@ -1,7 +1,5 @@
 //  Copyright © 2015 Yoshiki Kudo. All rights reserved.
 
-import Prelude
-
 public enum Node<V: Monoid, U> {
 	case Node2(V, U, U)
 	case Node3(V, U, U, U)

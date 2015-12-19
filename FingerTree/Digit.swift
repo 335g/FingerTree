@@ -1,7 +1,5 @@
 //  Copyright © 2015 Yoshiki Kudo. All rights reserved.
 
-import Prelude
-
 public enum Digit<A: MeasuredType> {
 	case One(A)
 	case Two(A, A)
