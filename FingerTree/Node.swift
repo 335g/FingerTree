@@ -11,6 +11,16 @@ public enum Node<V: Monoid, A: MeasuredType where V == A.MeasuredValue> {
 	public static func node3(a: A, b: A, c: A) -> Node<V, A> {
 		return .Node3(a.measure().mappend(b.measure().mappend(c.measure())), a, b, c)
 	}
+	
+	public func map<V1: Monoid, A1: MeasuredType where V1 == A1.MeasuredValue>(f: A -> A1) -> Node<V1, A1> {
+		switch self {
+		case let .Node2(_, a, b):
+			return Node<V1, A1>.node2(f(a), b: f(b))
+			
+		case let .Node3(_, a, b, c):
+			return Node<V1, A1>.node3(f(a), b: f(b), c: f(c))
+		}
+	}
 }
 
 extension Node: Foldable {
