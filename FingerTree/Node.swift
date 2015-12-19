@@ -1,12 +1,14 @@
 //  Copyright © 2015 Yoshiki Kudo. All rights reserved.
 
-public enum Node<T, U> {
-	case Node2(T, U, U)
-	case Node3(T, U, U, U)
+import Prelude
+
+public enum Node<V: Monoid, U> {
+	case Node2(V, U, U)
+	case Node3(V, U, U, U)
 }
 
 extension Node: Foldable {
-	public func foldMap<V: Monoid>(f: U -> V) -> V {
+	public func foldMap<M: Monoid>(f: U -> M) -> M {
 		switch self {
 		case let .Node2(_, a, b):
 			return f(a).mappend(f(b))
@@ -24,5 +26,19 @@ public func nodeToDigit<V, A>(node: Node<V, A>) -> Digit<A> {
 		
 	case let .Node3(_, a, b, c):
 		return .Three(a, b, c)
+	}
+}
+
+extension Node: MeasuredType {
+	public typealias MeasuredValue = V
+	
+	public func measure() -> MeasuredValue {
+		switch self {
+		case let .Node2(v, _, _):
+			return v
+			
+		case let .Node3(v, _, _, _):
+			return v
+		}
 	}
 }

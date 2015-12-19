@@ -1,9 +1,7 @@
 //  Copyright © 2015 Yoshiki Kudo. All rights reserved.
 
 
-public enum FingerTree<Value, Annotation> {
-	public typealias V = Value
-	public typealias A = Annotation
+public enum FingerTree<V: Monoid, A: MeasuredType where V == A.MeasuredValue> {
 	
 	case Empty
 	case Single(A)
@@ -33,6 +31,24 @@ extension FingerTree: Foldable {
 			
 		case let .Deep(_, pre, deeper, suf):
 			return pre.foldMap(f).mappend(deeper.foldMap({ $0.foldMap(f) }).mappend(suf.foldMap(f)))
+		}
+	}
+}
+
+extension FingerTree: MeasuredType {
+	public typealias MeasuredValue = V
+	
+	public func measure() -> MeasuredValue {
+		switch self {
+		case .Empty:
+			return V.mempty
+			
+		case let .Single(a):
+			return a.measure()
+			
+		case let .Deep(v, _, _, _):
+			return v
+			
 		}
 	}
 }

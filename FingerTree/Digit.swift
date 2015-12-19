@@ -1,14 +1,16 @@
 //  Copyright © 2015 Yoshiki Kudo. All rights reserved.
 
-public enum Digit<T> {
-	case One(T)
-	case Two(T, T)
-	case Three(T, T, T)
-	case Four(T, T, T, T)
+import Prelude
+
+public enum Digit<A: MeasuredType> {
+	case One(A)
+	case Two(A, A)
+	case Three(A, A, A)
+	case Four(A, A, A, A)
 }
 
 extension Digit: Foldable {
-	public func foldMap<U: Monoid>(f: T -> U) -> U {
+	public func foldMap<M: Monoid>(f: A -> M) -> M {
 		switch self {
 		case let .One(a):
 			return f(a)
@@ -22,5 +24,13 @@ extension Digit: Foldable {
 		case let .Four(a, b, c, d):
 			return f(a).mappend(f(b).mappend(f(c).mappend(f(d))))
 		}
+	}
+}
+
+extension Digit: MeasuredType {
+	public typealias MeasuredValue = A.MeasuredValue
+	
+	public func measure() -> MeasuredValue {
+		return foldMap({ $0.measure() })
 	}
 }
