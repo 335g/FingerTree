@@ -23,6 +23,8 @@ public enum Node<V: Monoid, A: MeasuredType where V == A.MeasuredValue> {
 	}
 }
 
+// MARK: - Foldable
+
 extension Node: Foldable {
 	public func foldMap<M: Monoid>(f: A -> M) -> M {
 		switch self {
@@ -34,6 +36,8 @@ extension Node: Foldable {
 		}
 	}
 }
+
+// MARK: - MeasuredType
 
 extension Node: MeasuredType {
 	public typealias MeasuredValue = V

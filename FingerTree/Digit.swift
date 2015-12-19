@@ -23,6 +23,8 @@ public enum Digit<A: MeasuredType> {
 	}
 }
 
+// MARK: - Foldable
+
 extension Digit: Foldable {
 	public func foldMap<M: Monoid>(f: A -> M) -> M {
 		switch self {
@@ -40,6 +42,8 @@ extension Digit: Foldable {
 		}
 	}
 }
+
+// MARK: - MeasuredType
 
 extension Digit: MeasuredType {
 	public typealias MeasuredValue = A.MeasuredValue
