@@ -126,7 +126,39 @@ public func appendTree3<V, A>(tree: FingerTree<V, A>) -> A -> A -> A -> FingerTr
 }
 
 public func appendTree4<V, A>(tree: FingerTree<V, A>) -> A -> A -> A -> A -> FingerTree<V, A> -> FingerTree<V, A> {
-	fatalError()
+	return { a in
+		{ b in
+			{ c in
+				{ d in
+					{ tree1 in
+						switch (tree, a, b, c, d, tree1) {
+						case (.Empty, _, _, _, _, _):
+							return a <| b <| c <| d <| tree1
+							
+						case (_, _, _, _, _, .Empty):
+							return tree |> a |> b |> c |> d
+							
+						case let (.Single(x), _, _, _, _, _):
+							return x <| a <| b <| c <| d <| tree1
+							
+						case let (_, _, _, _, _, .Single(x)):
+							return tree |> a |> b |> c |> d |> x
+							
+						case let (.Deep(_, pr1, m1, sf1), _, _, _, _, .Deep(_, pr2, m2, sf2)):
+							return FingerTree<V, A>.deep(
+								prefix: pr1,
+								deeper: addDigits4(m1)(sf1)(a)(b)(c)(d)(pr2)(m2),
+								suffix: sf2
+							)
+							
+						default:
+							fatalError()
+						}
+					}
+				}
+			}
+		}
+	}
 }
 
 // MARK: - addDigits X
