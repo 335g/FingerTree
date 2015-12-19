@@ -1,12 +1,20 @@
 //  Copyright © 2015 Yoshiki Kudo. All rights reserved.
 
-public enum Node<V: Monoid, U> {
-	case Node2(V, U, U)
-	case Node3(V, U, U, U)
+public enum Node<V: Monoid, A: MeasuredType where V == A.MeasuredValue> {
+	case Node2(V, A, A)
+	case Node3(V, A, A, A)
+	
+	public static func node2(a: A, b: A) -> Node<V, A> {
+		return .Node2(a.measure().mappend(b.measure()), a, b)
+	}
+	
+	public static func node3(a: A, b: A, c: A) -> Node<V, A> {
+		return .Node3(a.measure().mappend(b.measure().mappend(c.measure())), a, b, c)
+	}
 }
 
 extension Node: Foldable {
-	public func foldMap<M: Monoid>(f: U -> M) -> M {
+	public func foldMap<M: Monoid>(f: A -> M) -> M {
 		switch self {
 		case let .Node2(_, a, b):
 			return f(a).mappend(f(b))
