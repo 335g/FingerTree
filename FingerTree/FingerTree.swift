@@ -15,8 +15,19 @@ public enum FingerTree<V: Monoid, A: MeasuredType where V == A.MeasuredValue> {
 		return Single(a)
 	}
 	
-	public static func deep(value: V, prefix: Digit<A>, deeper: FingerTree<V, Node<V, A>>, suffix: Digit<A>) -> FingerTree {
-		return Deep(value, prefix, deeper, suffix)
+	public static func deep(prefix: Digit<A>, deeper: FingerTree<V, Node<V, A>>, suffix: Digit<A>) -> FingerTree {
+		
+		return .Deep(deeper.mappendVal(prefix.measure()), prefix, deeper, suffix)
+	}
+	
+	func mappendVal(v: V) -> V {
+		switch self {
+		case .Empty:
+			return v
+			
+		default:
+			return v.mappend(self.measure())
+		}
 	}
 }
 
