@@ -6,6 +6,8 @@ public enum Digit<A: MeasuredType> {
 	case Three(A, A, A)
 	case Four(A, A, A, A)
 	
+	// MARK: - map
+	
 	public func map<B>(f: A -> B) -> Digit<B> {
 		switch self {
 		case let .One(a):

@@ -1,8 +1,11 @@
 //  Copyright © 2015 Yoshiki Kudo. All rights reserved.
 
 public enum Node<V: Monoid, A: MeasuredType where V == A.MeasuredValue> {
+	
 	case Node2(V, A, A)
 	case Node3(V, A, A, A)
+	
+	// MARK: - static
 	
 	public static func node2(a: A, _ b: A) -> Node<V, A> {
 		return .Node2(a.measure().mappend(b.measure()), a, b)
@@ -11,6 +14,8 @@ public enum Node<V: Monoid, A: MeasuredType where V == A.MeasuredValue> {
 	public static func node3(a: A, _ b: A, _ c: A) -> Node<V, A> {
 		return .Node3(a.measure().mappend(b.measure().mappend(c.measure())), a, b, c)
 	}
+	
+	// MARK: - map
 	
 	public func map<V1: Monoid, A1: MeasuredType where V1 == A1.MeasuredValue>(f: A -> A1) -> Node<V1, A1> {
 		switch self {
