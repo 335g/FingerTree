@@ -72,7 +72,6 @@ extension FingerTree {
 			return self |> a
 			
 		case let (.Deep(_, pr1, m1, sf1), .Deep(_, pr2, m2, sf2)):
-			
 			return FingerTree.deep(
 				prefix: pr1,
 				deeper: m1.addDigits0(m2, sf1, pr2),
@@ -83,34 +82,6 @@ extension FingerTree {
 			fatalError()
 		}
 	}
-	
-//	public func appendTree1(tree: FingerTree) -> A -> FingerTree {
-//		return { a in
-//			switch (self, tree) {
-//			case (.Empty, _):
-//				return a <| tree
-//				
-//			case (_, .Empty):
-//				return self |> a
-//				
-//			case let (.Single(x), _):
-//				return x <| a <| tree
-//				
-//			case let (_, .Single(x)):
-//				return self |> a |> x
-//				
-//			case let (.Deep(_, pr1, m1, sf1), .Deep(_, pr2, m2, sf2)):
-//				return FingerTree.deep(
-//					prefix: pr1,
-//					deeper: m1.addDigits1(m2, sf1, a, pr2),
-//					suffix: sf2
-//				)
-//				
-//			default:
-//				fatalError()
-//			}
-//		}
-//	}
 	
 	public func appendTree1(tree: FingerTree, _ a: A) -> FingerTree {
 		switch (self, tree) {
