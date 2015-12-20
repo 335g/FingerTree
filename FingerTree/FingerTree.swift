@@ -187,45 +187,6 @@ extension FingerTree {
 	}
 }
 
-// MARK: - Foldable
-
-extension FingerTree: Foldable {
-	public func foldMap<M: Monoid>(f: A -> M) -> M {
-		switch self {
-		case .Empty:
-			return M.mempty
-			
-		case let .Single(x):
-			return f(x)
-			
-		case let .Deep(_, pre, deeper, suf):
-			return pre.foldMap(f).mappend(deeper.foldMap({ $0.foldMap(f) }).mappend(suf.foldMap(f)))
-		}
-	}
-}
-
-// MARK: - MeasuredType
-
-extension FingerTree: MeasuredType {
-	public typealias MeasuredValue = V
-	
-	public func measure() -> MeasuredValue {
-		switch self {
-		case .Empty:
-			return V.mempty
-			
-		case let .Single(a):
-			return a.measure()
-			
-		case let .Deep(v, _, _, _):
-			return v
-			
-		}
-	}
-}
-
-// MARK: - Concatenation
-
 extension FingerTree where A: NodeType, V == A.Value, V == A.Annotation.MeasuredValue {
 	typealias AA = A.Annotation
 	
@@ -767,3 +728,41 @@ extension FingerTree where A: NodeType, V == A.Value, V == A.Annotation.Measured
 		}
 	}
 }
+
+// MARK: - Foldable
+
+extension FingerTree: Foldable {
+	public func foldMap<M: Monoid>(f: A -> M) -> M {
+		switch self {
+		case .Empty:
+			return M.mempty
+			
+		case let .Single(x):
+			return f(x)
+			
+		case let .Deep(_, pre, deeper, suf):
+			return pre.foldMap(f).mappend(deeper.foldMap({ $0.foldMap(f) }).mappend(suf.foldMap(f)))
+		}
+	}
+}
+
+// MARK: - MeasuredType
+
+extension FingerTree: MeasuredType {
+	public typealias MeasuredValue = V
+	
+	public func measure() -> MeasuredValue {
+		switch self {
+		case .Empty:
+			return V.mempty
+			
+		case let .Single(a):
+			return a.measure()
+			
+		case let .Deep(v, _, _, _):
+			return v
+			
+		}
+	}
+}
+
