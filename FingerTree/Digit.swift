@@ -54,3 +54,24 @@ extension Digit: MeasuredType {
 		return foldMap({ $0.measure() })
 	}
 }
+
+// MARK: - Equatable
+
+public func == <T: Equatable>(lhs: Digit<T>, rhs: Digit<T>) -> Bool {
+	switch (lhs, rhs) {
+	case let (.One(l), .One(r)):
+		return l == r
+		
+	case let (.Two(l1, l2), .Two(r1, r2)):
+		return l1 == r1 && l2 == r2
+		
+	case let (.Three(l1, l2, l3), .Three(r1, r2, r3)):
+		return l1 == r1 && l2 == r2 && l3 == r3
+		
+	case let (.Four(l1, l2, l3, l4), .Four(r1, r2, r3, r4)):
+		return l1 == r1 && l2 == r2 && l3 == r3 && l4 == r4
+		
+	default:
+		return false
+	}
+}
