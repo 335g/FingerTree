@@ -98,7 +98,7 @@ extension Digit {
 		}
 	}
 	
-	func cons(x: A) throws -> Digit {
+	func cons(x: A) -> Digit {
 		switch self {
 		case let .One(a):
 			return .Two(x, a)
@@ -107,11 +107,12 @@ extension Digit {
 		case let .Three(a, b, c):
 			return .Four(x, a, b, c)
 		case .Four(_, _, _, _):
-			throw DigitCapacityError.Over
+			// TODO: throw or optional
+			fatalError()
 		}
 	}
 	
-	func snoc(x: A) throws -> Digit {
+	func snoc(x: A) -> Digit {
 		switch self {
 		case let .One(a):
 			return .Two(a, x)
@@ -120,7 +121,8 @@ extension Digit {
 		case let .Three(a, b, c):
 			return .Four(a, b, c, x)
 		case .Four(_, _, _, _):
-			throw DigitCapacityError.Over
+			// TODO: throw or optional
+			fatalError()
 		}
 	}
 }
@@ -197,10 +199,4 @@ public func == <T: Equatable>(lhs: Digit<T>, rhs: Digit<T>) -> Bool {
 	default:
 		return false
 	}
-}
-
-// MARK: - ErrorType
-
-public enum DigitCapacityError: ErrorType {
-	case Over
 }
