@@ -67,7 +67,7 @@ extension Array where Element: MeasuredType {
 // MARK: - Deconstruction
 
 extension FingerTree {
-	public func toList() -> Array<A> {
+	public var list: Array<A> {
 		fatalError()
 	}
 }
@@ -805,5 +805,5 @@ extension FingerTree: MeasuredType {
 // MARK: - Equatable
 
 public func == <V, A: Equatable>(lhs: FingerTree<V, A>, rhs: FingerTree<V, A>) -> Bool {
-	return lhs.toList() == rhs.toList()
+	return lhs.list == rhs.list
 }
