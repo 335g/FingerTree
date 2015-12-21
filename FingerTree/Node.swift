@@ -38,13 +38,29 @@ public enum Node<V: Monoid, A: MeasuredType where V == A.MeasuredValue>: NodeTyp
 // MARK: - Foldable
 
 extension Node: Foldable {
-	public func foldMap<M: Monoid>(f: A -> M) -> M {
+	public func foldr<B>(initial: B, _ f: A -> B -> B) -> B {
 		switch self {
 		case let .Node2(_, a, b):
-			return f(a).mappend(f(b))
+			return f(a)(f(b)(initial))
 			
 		case let .Node3(_, a, b, c):
-			return f(a).mappend(f(b).mappend(f(c)))
+			return f(a)(f(b)(f(c)(initial)))
+		}
+	}
+	
+	public func foldl<B>(initial: B, _ f: B -> A -> B) -> B {
+		switch self {
+		case let .Node2(_, a, b):
+			return f(f(initial)(a))(b)
+			
+		case let .Node3(_, a, b, c):
+			return f(f(f(initial)(a))(b))(c)
+		}
+	}
+	
+	public func foldMap<M: Monoid>(f: A -> M) -> M {
+		return foldl(M.mempty){ m in
+			{ m.mappend(f($0)) }
 		}
 	}
 }

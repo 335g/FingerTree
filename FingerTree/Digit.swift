@@ -28,20 +28,71 @@ public enum Digit<A: MeasuredType> {
 // MARK: - Foldable
 
 extension Digit: Foldable {
-	public func foldMap<M: Monoid>(f: A -> M) -> M {
+//	public func foldMap<M: Monoid>(f: A -> M) -> M {
+//		switch self {
+//		case let .One(a):
+//			return f(a)
+//			
+//		case let .Two(a, b):
+//			return f(a).mappend(f(b))
+//			
+//		case let .Three(a, b, c):
+//			return f(a).mappend(f(b).mappend(f(c)))
+//			
+//		case let .Four(a, b, c, d):
+//			return f(a).mappend(f(b).mappend(f(c).mappend(f(d))))
+//		}
+//	}
+	
+	public func foldr<B>(initial: B, _ f: A -> B -> B) -> B {
 		switch self {
 		case let .One(a):
-			return f(a)
+			return f(a)(initial)
 			
 		case let .Two(a, b):
-			return f(a).mappend(f(b))
+			return f(a)(f(b)(initial))
 			
 		case let .Three(a, b, c):
-			return f(a).mappend(f(b).mappend(f(c)))
+			return f(a)(f(b)(f(c)(initial)))
 			
 		case let .Four(a, b, c, d):
-			return f(a).mappend(f(b).mappend(f(c).mappend(f(d))))
+			return f(a)(f(b)(f(c)(f(d)(initial))))
 		}
+	}
+	
+	public func foldl<B>(initial: B, _ f: B -> A -> B) -> B {
+		switch self {
+		case let .One(a):
+			return f(initial)(a)
+			
+		case let .Two(a, b):
+			return f(f(initial)(a))(b)
+			
+		case let .Three(a, b, c):
+			return f(f(f(initial)(a))(b))(c)
+			
+		case let .Four(a, b, c, d):
+			return f(f(f(f(initial)(a))(b))(c))(d)
+		}
+	}
+	
+	public func foldMap<M : Monoid>(f: A -> M) -> M {
+		return foldl(M.mempty){ m in
+			{ m.mappend(f($0)) }
+		}
+	}
+	
+	public func toList() -> Array<A.MeasuredValue> {
+		let append_: A -> Array<A.MeasuredValue> -> Array<A.MeasuredValue> = { a in
+			{ list in
+				var aList = list
+				aList.append(a.measure())
+				return aList
+			}
+			
+		}
+		
+		return foldr([], append_)
 	}
 }
 

@@ -732,6 +732,7 @@ extension FingerTree where A: NodeType, V == A.Value, V == A.Annotation.Measured
 // MARK: - Foldable
 
 extension FingerTree: Foldable {
+	
 	public func foldMap<M: Monoid>(f: A -> M) -> M {
 		switch self {
 		case .Empty:
@@ -766,3 +767,24 @@ extension FingerTree: MeasuredType {
 	}
 }
 
+// MARK: - Equatable
+
+public func == <V: Equatable, A: Equatable>(lhs: FingerTree<V, A>, rhs: FingerTree<V, A>) -> Bool {
+	switch (lhs, rhs) {
+	case (.Empty, .Empty):
+		return true
+		
+	case let (.Single(l), .Single(r)):
+		return l == r
+		
+	case let (.Deep(lv, lpr, lm, lsf), .Deep(rv, rpr, rm, rsf)):
+		return lv == rv && lpr == rpr && lm == rm && lsf == rsf
+		
+	default:
+		return false
+	}
+}
+
+public func == <V: Equatable, A: Equatable>(lhs: FingerTree<V, Node<V, A>>, rhs: FingerTree<V, Node<V, A>>) -> Bool {
+	fatalError()
+}
