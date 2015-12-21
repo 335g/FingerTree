@@ -804,22 +804,6 @@ extension FingerTree: MeasuredType {
 
 // MARK: - Equatable
 
-public func == <V: Equatable, A: Equatable>(lhs: FingerTree<V, A>, rhs: FingerTree<V, A>) -> Bool {
-	switch (lhs, rhs) {
-	case (.Empty, .Empty):
-		return true
-		
-	case let (.Single(l), .Single(r)):
-		return l == r
-		
-	case let (.Deep(lv, lpr, lm, lsf), .Deep(rv, rpr, rm, rsf)):
-		return lv == rv && lpr == rpr && lm == rm && lsf == rsf
-		
-	default:
-		return false
-	}
-}
-
-public func == <V: Equatable, A: Equatable>(lhs: FingerTree<V, Node<V, A>>, rhs: FingerTree<V, Node<V, A>>) -> Bool {
-	fatalError()
+public func == <V, A: Equatable>(lhs: FingerTree<V, A>, rhs: FingerTree<V, A>) -> Bool {
+	return lhs.toList() == rhs.toList()
 }
