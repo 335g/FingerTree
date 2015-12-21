@@ -1,12 +1,5 @@
 //  Copyright © 2015 Yoshiki Kudo. All rights reserved.
 
-// MARK: - __ NodeType __
-
-public protocol NodeType {
-	typealias Annotation: Measurable
-	typealias Value = Annotation.MeasuredValue
-}
-
 // MARK: - __ Node __
 
 public enum Node<V, A: Measurable where V == A.MeasuredValue>: NodeType {
