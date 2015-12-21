@@ -59,7 +59,7 @@ public enum FingerTree<V: Monoid, A: MeasuredType where V == A.MeasuredValue> {
 extension Array where Element: MeasuredType {
 	public typealias V = Element.MeasuredValue
 	
-	public func fingerTree() -> FingerTree<V, Element> {
+	public var fingerTree: FingerTree<V, Element> {
 		return reduce(.Empty){ $0.1 <| $0.0 }
 	}
 }
@@ -68,6 +68,7 @@ extension Array where Element: MeasuredType {
 
 extension FingerTree {
 	public var list: Array<A> {
+		
 		fatalError()
 	}
 }
