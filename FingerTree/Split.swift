@@ -4,7 +4,7 @@ public enum Split<T, A> {
 	case Split(T, A, T)
 }
 
-public func splitDigit<V: Monoid, A: MeasuredType where V == A.MeasuredValue>(predicate: V -> Bool) -> V -> Digit<A> -> Split<Digit<A>?, A> {
+public func splitDigit<V: Monoid, A: Measurable where V == A.MeasuredValue>(predicate: V -> Bool) -> V -> Digit<A> -> Split<Digit<A>?, A> {
 	return { i in
 		{ digit in
 			switch digit {

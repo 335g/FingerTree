@@ -1,11 +1,11 @@
 //  Copyright © 2015 Yoshiki Kudo. All rights reserved.
 
 public protocol NodeType {
-	typealias Annotation: MeasuredType
+	typealias Annotation: Measurable
 	typealias Value: Monoid = Annotation.MeasuredValue
 }
 
-public enum Node<V: Monoid, A: MeasuredType where V == A.MeasuredValue>: NodeType {
+public enum Node<V: Monoid, A: Measurable where V == A.MeasuredValue>: NodeType {
 	public typealias Value = V
 	public typealias Annotation = A
 	
@@ -24,7 +24,7 @@ public enum Node<V: Monoid, A: MeasuredType where V == A.MeasuredValue>: NodeTyp
 	
 	// MARK: - map
 	
-	public func map<V1: Monoid, A1: MeasuredType where V1 == A1.MeasuredValue>(f: A -> A1) -> Node<V1, A1> {
+	public func map<V1: Monoid, A1: Measurable where V1 == A1.MeasuredValue>(f: A -> A1) -> Node<V1, A1> {
 		switch self {
 		case let .Node2(_, a, b):
 			return Node<V1, A1>.node2(f(a), f(b))
@@ -65,9 +65,9 @@ extension Node: Foldable {
 	}
 }
 
-// MARK: - MeasuredType
+// MARK: - Measurable
 
-extension Node: MeasuredType {
+extension Node: Measurable {
 	public typealias MeasuredValue = V
 	
 	public func measure() -> MeasuredValue {

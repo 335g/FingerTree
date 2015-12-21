@@ -1,6 +1,6 @@
 //  Copyright © 2015 Yoshiki Kudo. All rights reserved.
 
-public enum Digit<A: MeasuredType> {
+public enum Digit<A: Measurable> {
 	case One(A)
 	case Two(A, A)
 	case Three(A, A, A)
@@ -68,9 +68,9 @@ extension Digit: Foldable {
 	}
 }
 
-// MARK: - MeasuredType
+// MARK: - Measurable
 
-extension Digit: MeasuredType {
+extension Digit: Measurable {
 	public typealias MeasuredValue = A.MeasuredValue
 	
 	public func measure() -> MeasuredValue {

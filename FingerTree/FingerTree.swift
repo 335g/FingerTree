@@ -1,6 +1,6 @@
 //  Copyright © 2015 Yoshiki Kudo. All rights reserved.
 
-public enum FingerTree<V: Monoid, A: MeasuredType where V == A.MeasuredValue> {
+public enum FingerTree<V: Monoid, A: Measurable where V == A.MeasuredValue> {
 	
 	case Empty
 	case Single(A)
@@ -35,7 +35,7 @@ public enum FingerTree<V: Monoid, A: MeasuredType where V == A.MeasuredValue> {
 
 // MARK: - Construction
 
-extension Array where Element: MeasuredType {
+extension Array where Element: Measurable {
 	public typealias V = Element.MeasuredValue
 	
 	public var fingerTree: FingerTree<V, Element> {
@@ -792,9 +792,9 @@ extension FingerTree: Foldable {
 	}
 }
 
-// MARK: - MeasuredType
+// MARK: - Measurable
 
-extension FingerTree: MeasuredType {
+extension FingerTree: Measurable {
 	public typealias MeasuredValue = V
 	
 	public func measure() -> MeasuredValue {
