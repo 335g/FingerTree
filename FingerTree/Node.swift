@@ -21,8 +21,11 @@ public enum Node<V: Monoid, A: Measurable where V == A.MeasuredValue>: NodeType 
 	public static func node3(a: A, _ b: A, _ c: A) -> Node {
 		return .Node3(a.measure().mappend(b.measure().mappend(c.measure())), a, b, c)
 	}
-	
-	// MARK: - map
+}
+
+// MARK: - Map
+
+extension Node {
 	
 	public func map<V1: Monoid, A1: Measurable where V1 == A1.MeasuredValue>(f: A -> A1) -> Node<V1, A1> {
 		switch self {
