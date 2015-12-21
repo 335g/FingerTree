@@ -68,8 +68,16 @@ extension Array where Element: MeasuredType {
 
 extension FingerTree {
 	public var list: Array<A> {
+		// TODO: fold with inout
 		
-		fatalError()
+		let add: A -> [A] -> [A] = { target in
+			{ list in
+				var copied = list
+				copied.insert(target, atIndex: 0)
+				return copied
+			}
+		}
+		return self.foldr([], add)
 	}
 }
 
@@ -98,6 +106,7 @@ extension FingerTree {
 			)
 			
 		default:
+			// TODO: throw
 			fatalError()
 		}
 	}
@@ -124,6 +133,7 @@ extension FingerTree {
 			)
 			
 		default:
+			// TODO: throw
 			fatalError()
 		}
 	}
@@ -149,6 +159,7 @@ extension FingerTree {
 				suffix: sf2)
 			
 		default:
+			// TODO: throw
 			fatalError()
 		}
 	}
@@ -175,6 +186,7 @@ extension FingerTree {
 			)
 			
 		default:
+			// TODO: throw
 			fatalError()
 		}
 	}
@@ -201,6 +213,7 @@ extension FingerTree {
 			)
 			
 		default:
+			// TODO: throw
 			fatalError()
 		}
 	}
