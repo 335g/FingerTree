@@ -814,6 +814,22 @@ extension FingerTree: Measurable {
 	}
 }
 
+// MARK: - Semigroup
+
+extension FingerTree: Semigroup {
+	public func mappend(other: FingerTree) -> FingerTree {
+		return appendTree0(other)
+	}
+}
+
+// MARK: - Monoid
+
+extension FingerTree: Monoid {
+	public static var mempty: FingerTree {
+		return .Empty
+	}
+}
+
 // MARK: - Equatable
 
 public func == <V, A: Equatable>(lhs: FingerTree<V, A>, rhs: FingerTree<V, A>) -> Bool {
