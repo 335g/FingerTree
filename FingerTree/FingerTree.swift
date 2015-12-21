@@ -54,6 +54,16 @@ public enum FingerTree<V: Monoid, A: MeasuredType where V == A.MeasuredValue> {
 //	}
 //}
 
+// MARK: - Construction
+
+extension Array where Element: MeasuredType {
+	public typealias V = Element.MeasuredValue
+	
+	public func fingerTree() -> FingerTree<V, Element> {
+		return reduce(.Empty){ $0.1 <| $0.0 }
+	}
+}
+
 // MARK: - Concatenation
 
 extension FingerTree {
