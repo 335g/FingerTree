@@ -64,6 +64,14 @@ extension Array where Element: MeasuredType {
 	}
 }
 
+// MARK: - Deconstruction
+
+extension FingerTree {
+	public func toList() -> Array<A> {
+		fatalError()
+	}
+}
+
 // MARK: - Concatenation
 
 extension FingerTree {
@@ -742,6 +750,23 @@ extension FingerTree where A: NodeType, V == A.Value, V == A.Annotation.Measured
 // MARK: - Foldable
 
 extension FingerTree: Foldable {
+	
+	func foldr<B>(initial: B, _ f: A -> B -> B) -> B {
+		switch self {
+		case .Empty:
+			return initial
+		
+		case let .Single(a):
+			return f(a)(initial)
+
+		case let .Deep(_, pre, m, suf):
+			return pre.foldr(
+				m.foldr(
+					suf.foldr(initial, f),
+					{ node in { node.foldr($0, f) }} ),
+				f)
+		}
+	}
 	
 	public func foldMap<M: Monoid>(f: A -> M) -> M {
 		switch self {

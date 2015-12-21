@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:FingerTreeDev.playground">
+   </FileRef>
+   <FileRef
       location = "group:FingerTree.xcodeproj">
    </FileRef>
    <FileRef
