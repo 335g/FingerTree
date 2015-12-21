@@ -83,6 +83,19 @@ extension Digit {
 			return .Three(a, b, c)
 		}
 	}
+	
+	var tree: FingerTree<A.MeasuredValue, A> {
+		switch self {
+		case let .One(a):
+			return .Single(a)
+		case let .Two(a, b):
+			return FingerTree.deep(prefix: .One(a), deeper: .Empty, suffix: .One(b))
+		case let .Three(a, b, c):
+			return FingerTree.deep(prefix: .Two(a, b), deeper: .Empty, suffix: .One(c))
+		case let .Four(a, b, c, d):
+			return FingerTree.deep(prefix: .Two(a, b), deeper: .Empty, suffix: .Two(c, d))
+		}
+	}
 }
 
 // MARK: - Foldable
