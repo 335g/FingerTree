@@ -1,9 +1,13 @@
 //  Copyright © 2015 Yoshiki Kudo. All rights reserved.
 
+// MARK: - __ NodeType __
+
 public protocol NodeType {
 	typealias Annotation: Measurable
 	typealias Value = Annotation.MeasuredValue
 }
+
+// MARK: - __ Node __
 
 public enum Node<V, A: Measurable where V == A.MeasuredValue>: NodeType {
 	public typealias Value = V
@@ -12,7 +16,7 @@ public enum Node<V, A: Measurable where V == A.MeasuredValue>: NodeType {
 	case Node2(V, A, A)
 	case Node3(V, A, A, A)
 	
-	// MARK: - static
+	// MARK: static
 	
 	public static func node2(a: A, _ b: A) -> Node {
 		return .Node2(a.measure().mappend(b.measure()), a, b)

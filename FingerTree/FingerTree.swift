@@ -1,12 +1,14 @@
 //  Copyright © 2015 Yoshiki Kudo. All rights reserved.
 
+// MARK: - __ FingerTree __
+
 public enum FingerTree<V, A: Measurable where V == A.MeasuredValue> {
 	
 	case Empty
 	case Single(A)
 	indirect case Deep(V, Digit<A>, FingerTree<V, Node<V, A>>, Digit<A>)
 	
-	// MARK: - static 
+	// MARK: static
 	
 	public static func empty() -> FingerTree {
 		return Empty
@@ -20,7 +22,7 @@ public enum FingerTree<V, A: Measurable where V == A.MeasuredValue> {
 		return .Deep(deeper.mappendVal(prefix.measure()), prefix, deeper, suffix)
 	}
 	
-	// MARK: - Other
+	// MARK: other
 	
 	func mappendVal(v: V) -> V {
 		switch self {

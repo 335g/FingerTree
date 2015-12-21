@@ -1,5 +1,7 @@
 //  Copyright © 2015 Yoshiki Kudo. All rights reserved.
 
+// MARK: - __ Digit __
+
 public enum Digit<A: Measurable> {
 	case One(A)
 	case Two(A, A)
