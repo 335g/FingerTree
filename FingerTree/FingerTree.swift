@@ -33,27 +33,6 @@ public enum FingerTree<V: Monoid, A: MeasuredType where V == A.MeasuredValue> {
 	}
 }
 
-// MARK: - Map
-
-//extension FingerTree {
-//	public func map<V1: Monoid, A1: MeasuredType where V1 == A1.MeasuredValue>(f: A -> A1) -> FingerTree<V1, A1> {
-//		switch self {
-//		case .Empty:
-//			return .Empty
-//			
-//		case let .Single(a):
-//			return FingerTree<V1, A1>.single(f(a))
-//			
-//		case let .Deep(_, prefix, deeper, suffix):
-//			return FingerTree<V1, A1>.deep(
-//				prefix: prefix.map(f),
-//				deeper: deeper.map({ $0.map(f) }),
-//				suffix: suffix.map(f)
-//			)
-//		}
-//	}
-//}
-
 // MARK: - Construction
 
 extension Array where Element: MeasuredType {

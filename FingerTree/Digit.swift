@@ -28,21 +28,6 @@ public enum Digit<A: MeasuredType> {
 // MARK: - Foldable
 
 extension Digit: Foldable {
-//	public func foldMap<M: Monoid>(f: A -> M) -> M {
-//		switch self {
-//		case let .One(a):
-//			return f(a)
-//			
-//		case let .Two(a, b):
-//			return f(a).mappend(f(b))
-//			
-//		case let .Three(a, b, c):
-//			return f(a).mappend(f(b).mappend(f(c)))
-//			
-//		case let .Four(a, b, c, d):
-//			return f(a).mappend(f(b).mappend(f(c).mappend(f(d))))
-//		}
-//	}
 	
 	func foldr<B>(initial: B, _ f: A -> B -> B) -> B {
 		switch self {
