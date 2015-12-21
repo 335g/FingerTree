@@ -28,6 +28,37 @@ extension Digit {
 	}
 }
 
+// MARK: - Transformation
+
+extension Digit {
+	
+	public var leftHead: A {
+		switch self {
+		case let .One(a):
+			return a
+		case let .Two(a, _):
+			return a
+		case let .Three(a, _, _):
+			return a
+		case let .Four(a, _, _, _):
+			return a
+		}
+	}
+	
+	public var rightHead: A {
+		switch self {
+		case let .One(a):
+			return a
+		case let .Two(_, a):
+			return a
+		case let .Three(_, _, a):
+			return a
+		case let .Four(_, _, _, a):
+			return a
+		}
+	}
+}
+
 // MARK: - Foldable
 
 extension Digit: Foldable {
