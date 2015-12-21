@@ -42,6 +42,20 @@ extension Node {
 	}
 }
 
+// MARK: - Transformation
+
+extension Node {
+	
+	public var digit: Digit<A> {
+		switch self {
+		case let .Node2(_, a, b):
+			return .Two(a, b)
+		case let .Node3(_, a, b, c):
+			return .Three(a, b, c)
+		}
+	}
+}
+
 // MARK: - Foldable
 
 extension Node: Foldable {
