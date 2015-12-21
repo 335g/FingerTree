@@ -38,7 +38,7 @@ public enum Node<V: Monoid, A: MeasuredType where V == A.MeasuredValue>: NodeTyp
 // MARK: - Foldable
 
 extension Node: Foldable {
-	public func foldr<B>(initial: B, _ f: A -> B -> B) -> B {
+	func foldr<B>(initial: B, _ f: A -> B -> B) -> B {
 		switch self {
 		case let .Node2(_, a, b):
 			return f(a)(f(b)(initial))
@@ -48,7 +48,7 @@ extension Node: Foldable {
 		}
 	}
 	
-	public func foldl<B>(initial: B, _ f: B -> A -> B) -> B {
+	func foldl<B>(initial: B, _ f: B -> A -> B) -> B {
 		switch self {
 		case let .Node2(_, a, b):
 			return f(f(initial)(a))(b)
