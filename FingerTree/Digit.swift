@@ -81,19 +81,6 @@ extension Digit: Foldable {
 			{ m.mappend(f($0)) }
 		}
 	}
-	
-	public func toList() -> Array<A.MeasuredValue> {
-		let append_: A -> Array<A.MeasuredValue> -> Array<A.MeasuredValue> = { a in
-			{ list in
-				var aList = list
-				aList.append(a.measure())
-				return aList
-			}
-			
-		}
-		
-		return foldr([], append_)
-	}
 }
 
 // MARK: - MeasuredType
