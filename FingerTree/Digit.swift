@@ -58,7 +58,31 @@ extension Digit {
 		}
 	}
 	
+	var leftTail: Digit? {
+		switch self {
+		case .One(_):
+			return nil
+		case let .Two(_, b):
+			return .One(b)
+		case let .Three(_, b, c):
+			return .Two(b, c)
+		case let .Four(_, b, c, d):
+			return .Three(b, c, d)
+		}
+	}
 	
+	var rightTail: Digit? {
+		switch self {
+		case .One(_):
+			return nil
+		case let .Two(a, _):
+			return .One(a)
+		case let .Three(a, b, _):
+			return .Two(a, b)
+		case let .Four(a, b, c, _):
+			return .Three(a, b, c)
+		}
+	}
 }
 
 // MARK: - Foldable
