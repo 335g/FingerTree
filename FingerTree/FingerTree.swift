@@ -1,6 +1,6 @@
 //  Copyright © 2015 Yoshiki Kudo. All rights reserved.
 
-public enum FingerTree<V: Monoid, A: Measurable where V == A.MeasuredValue> {
+public enum FingerTree<V, A: Measurable where V == A.MeasuredValue> {
 	
 	case Empty
 	case Single(A)

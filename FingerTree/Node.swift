@@ -2,10 +2,10 @@
 
 public protocol NodeType {
 	typealias Annotation: Measurable
-	typealias Value: Monoid = Annotation.MeasuredValue
+	typealias Value = Annotation.MeasuredValue
 }
 
-public enum Node<V: Monoid, A: Measurable where V == A.MeasuredValue>: NodeType {
+public enum Node<V, A: Measurable where V == A.MeasuredValue>: NodeType {
 	public typealias Value = V
 	public typealias Annotation = A
 	
