@@ -5,8 +5,11 @@ public enum Digit<A: Measurable> {
 	case Two(A, A)
 	case Three(A, A, A)
 	case Four(A, A, A, A)
-	
-	// MARK: - map
+}
+
+// MARK: - Map
+
+extension Digit {
 	
 	public func map<B>(f: A -> B) -> Digit<B> {
 		switch self {
