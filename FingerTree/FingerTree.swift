@@ -198,7 +198,7 @@ extension FingerTree {
 	}
 }
 
-extension FingerTree where A: NodeType, V == A.Value, V == A.Annotation.MeasuredValue {
+extension FingerTree where A: NodeType, V == A.Annotation.MeasuredValue {
 	typealias AA = A.Annotation
 	
 	public func addDigits0(tree: FingerTree, _ digit: Digit<AA>, _ digit1: Digit<AA>) -> FingerTree {
