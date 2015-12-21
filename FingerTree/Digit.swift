@@ -31,6 +31,7 @@ extension Digit {
 // MARK: - Transformation
 
 extension Digit {
+	typealias V = A.MeasuredValue
 	
 	var leftHead: A {
 		switch self {
@@ -84,7 +85,7 @@ extension Digit {
 		}
 	}
 	
-	var tree: FingerTree<A.MeasuredValue, A> {
+	var tree: FingerTree<V, A> {
 		switch self {
 		case let .One(a):
 			return .Single(a)
