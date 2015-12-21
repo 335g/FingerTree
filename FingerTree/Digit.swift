@@ -32,7 +32,7 @@ extension Digit {
 
 extension Digit {
 	
-	public var leftHead: A {
+	var leftHead: A {
 		switch self {
 		case let .One(a):
 			return a
@@ -45,7 +45,7 @@ extension Digit {
 		}
 	}
 	
-	public var rightHead: A {
+	var rightHead: A {
 		switch self {
 		case let .One(a):
 			return a
@@ -57,6 +57,8 @@ extension Digit {
 			return a
 		}
 	}
+	
+	
 }
 
 // MARK: - Foldable
