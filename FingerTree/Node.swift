@@ -31,7 +31,7 @@ public enum Node<V, A: Measurable where V == A.MeasuredValue>: NodeType {
 
 extension Node {
 	
-	public func map<V1: Monoid, A1: Measurable where V1 == A1.MeasuredValue>(f: A -> A1) -> Node<V1, A1> {
+	public func map<V1, A1: Measurable where V1 == A1.MeasuredValue>(f: A -> A1) -> Node<V1, A1> {
 		switch self {
 		case let .Node2(_, a, b):
 			return Node<V1, A1>.node2(f(a), f(b))
