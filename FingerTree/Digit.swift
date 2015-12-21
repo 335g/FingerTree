@@ -97,6 +97,32 @@ extension Digit {
 			return FingerTree.deep(prefix: .Two(a, b), deeper: .Empty, suffix: .Two(c, d))
 		}
 	}
+	
+	func cons(x: A) throws -> Digit {
+		switch self {
+		case let .One(a):
+			return .Two(x, a)
+		case let .Two(a, b):
+			return .Three(x, a, b)
+		case let .Three(a, b, c):
+			return .Four(x, a, b, c)
+		case .Four(_, _, _, _):
+			throw DigitCapacityError.Over
+		}
+	}
+	
+	func snoc(x: A) throws -> Digit {
+		switch self {
+		case let .One(a):
+			return .Two(a, x)
+		case let .Two(a, b):
+			return .Three(a, b, x)
+		case let .Three(a, b, c):
+			return .Four(a, b, c, x)
+		case .Four(_, _, _, _):
+			throw DigitCapacityError.Over
+		}
+	}
 }
 
 // MARK: - Foldable
@@ -171,4 +197,10 @@ public func == <T: Equatable>(lhs: Digit<T>, rhs: Digit<T>) -> Bool {
 	default:
 		return false
 	}
+}
+
+// MARK: - ErrorType
+
+public enum DigitCapacityError: ErrorType {
+	case Over
 }
