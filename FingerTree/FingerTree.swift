@@ -761,6 +761,23 @@ extension FingerTree: Foldable {
 		}
 	}
 	
+	func foldl<B>(initial: B, _ f: B -> A -> B) -> B {
+		switch self {
+		case .Empty:
+			return initial
+		
+		case let .Single(a):
+			return f(initial)(a)
+			
+		case let .Deep(_, pre, m, suf):
+			return suf.foldl(
+				m.foldl(
+					pre.foldl(initial, f),
+					{ b in { $0.foldl(b, f) } }),
+				f)
+		}
+	}
+	
 	public func foldMap<M: Monoid>(f: A -> M) -> M {
 		switch self {
 		case .Empty:
