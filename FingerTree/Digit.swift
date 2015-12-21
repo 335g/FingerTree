@@ -44,7 +44,7 @@ extension Digit: Foldable {
 //		}
 //	}
 	
-	public func foldr<B>(initial: B, _ f: A -> B -> B) -> B {
+	func foldr<B>(initial: B, _ f: A -> B -> B) -> B {
 		switch self {
 		case let .One(a):
 			return f(a)(initial)
@@ -60,7 +60,7 @@ extension Digit: Foldable {
 		}
 	}
 	
-	public func foldl<B>(initial: B, _ f: B -> A -> B) -> B {
+	func foldl<B>(initial: B, _ f: B -> A -> B) -> B {
 		switch self {
 		case let .One(a):
 			return f(initial)(a)
