@@ -783,6 +783,14 @@ extension FingerTree {
 			}
 		}
 	}
+	
+	public func takeUntil(predicate: V -> Bool) -> FingerTree {
+		return self.split(predicate).0
+	}
+	
+	public func dropUntil(predicate: V -> Bool) -> FingerTree {
+		return self.split(predicate).1
+	}
 }
 
 // MARK: - View
