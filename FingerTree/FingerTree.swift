@@ -764,6 +764,27 @@ extension FingerTree where A: NodeType, V == A.Annotation.MeasuredValue {
 	}
 }
 
+// MARK: - Split
+
+extension FingerTree {
+	public func split(predicate: V -> Bool) -> (FingerTree, FingerTree) {
+		switch self {
+		case .Empty:
+			return (.Empty, .Empty)
+			
+		default:
+			switch splitTree(predicate)(V.mempty)(self) {
+			case let .Split(l, x, r):
+				if predicate(self.measure()) {
+					return (l, x <| r)
+				}else {
+					return (self, .Empty)
+				}
+			}
+		}
+	}
+}
+
 // MARK: - View
 
 extension FingerTree {
