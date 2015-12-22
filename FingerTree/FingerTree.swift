@@ -796,7 +796,9 @@ extension FingerTree {
 // MARK: - Reverse
 
 extension FingerTree {
-	
+	public var reverse: FingerTree {
+		return self.reverse({ $0 })
+	}
 	
 	func reverse<V1, A1: Measurable where V1 == A1.MeasuredValue>(f: A -> A1) -> FingerTree<V1, A1> {
 		switch self {
