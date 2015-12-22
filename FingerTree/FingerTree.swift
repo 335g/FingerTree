@@ -764,6 +764,68 @@ extension FingerTree where A: NodeType, V == A.Annotation.MeasuredValue {
 	}
 }
 
+// MARK: - View
+
+extension FingerTree {
+	public var viewl: ViewLeft<V, A> {
+		switch self {
+		case .Empty:
+			return .Empty
+		case let .Single(a):
+			return .EdgeWith(a, .Empty)
+		case let .Deep(_, .One(a), m, suf):
+			return .EdgeWith(a, rotL(m)(suf))
+		case let .Deep(_, pre, m, suf):
+			guard let newPre = pre.leftTail else {
+				// TODO: Remove fatalError
+				fatalError()
+			}
+			return .EdgeWith(pre.leftHead, FingerTree.deep(prefix: newPre, deeper: m, suffix: suf))
+		}
+	}
+	
+	public var viewr: ViewRight<V, A> {
+		switch self {
+		case .Empty:
+			return .Empty
+		case let .Single(a):
+			return .EdgeWith(a, .Empty)
+		case let .Deep(_, pre, m, .One(a)):
+			return .EdgeWith(a, rotR(pre)(m))
+		case let .Deep(_, pre, m, suf):
+			guard let newSuf = suf.rightTail else {
+				// TODO: Remove fatalError
+				fatalError()
+			}
+			return .EdgeWith(suf.rightHead, FingerTree.deep(prefix: pre, deeper: m, suffix: newSuf))
+		}
+	}
+}
+
+func rotL<V, A: Measurable where V == A.MeasuredValue>(tree: FingerTree<V, Node<V, A>>) -> Digit<A> -> FingerTree<V, A> {
+	return { suf in
+		switch tree.viewl {
+		case .Empty:
+			return suf.tree
+			
+		case let .EdgeWith(a, tree1):
+			return .Deep(tree.measure().mappend(suf.measure()), a.digit, tree1, suf)
+		}
+	}
+}
+
+func rotR<V, A: Measurable where V == A.MeasuredValue>(pre: Digit<A>) -> FingerTree<V, Node<V, A>> -> FingerTree<V, A> {
+	return { tree in
+		switch tree.viewr {
+		case .Empty:
+			return pre.tree
+			
+		case let .EdgeWith(a, tree1):
+			return .Deep(tree.mappendVal(pre.measure()), pre, tree1, a.digit)
+		}
+	}
+}
+
 // MARK: - Foldable
 
 extension FingerTree: Foldable {
