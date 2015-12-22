@@ -24,17 +24,6 @@ public enum FingerTree<V, A: Measurable where V == A.MeasuredValue>: FingerTreeT
 		return .Deep(deeper.mappendVal(prefix.measure()), prefix, deeper, suffix)
 	}
 	
-	// MARK: other
-	
-	func mappendVal(v: V) -> V {
-		switch self {
-		case .Empty:
-			return v
-			
-		default:
-			return v.mappend(self.measure())
-		}
-	}
 }
 
 // MARK: - Map
@@ -873,6 +862,20 @@ func rotR<V, A: Measurable where V == A.MeasuredValue>(pre: Digit<A>) -> FingerT
 			
 		case let .EdgeWith(a, tree1):
 			return .Deep(tree.mappendVal(pre.measure()), pre, tree1, a.digit)
+		}
+	}
+}
+
+// MARK: - Other
+
+extension FingerTree {
+	func mappendVal(v: V) -> V {
+		switch self {
+		case .Empty:
+			return v
+			
+		default:
+			return v.mappend(self.measure())
 		}
 	}
 }
