@@ -39,7 +39,7 @@ extension Node {
 
 extension Node {
 	
-	public var digit: Digit<A> {
+	var digit: Digit<A> {
 		switch self {
 		case let .Node2(_, a, b):
 			return .Two(a, b)
@@ -83,7 +83,7 @@ extension Node: Foldable {
 		}
 	}
 	
-	public func foldMap<M: Monoid>(f: A -> M) -> M {
+	func foldMap<M: Monoid>(f: A -> M) -> M {
 		return foldl(M.mempty){ m in
 			{ m.mappend(f($0)) }
 		}

@@ -178,7 +178,7 @@ extension Digit: Foldable {
 		}
 	}
 	
-	public func foldMap<M : Monoid>(f: A -> M) -> M {
+	func foldMap<M : Monoid>(f: A -> M) -> M {
 		return foldl(M.mempty){ m in
 			{ m.mappend(f($0)) }
 		}

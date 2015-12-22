@@ -14,7 +14,7 @@ public protocol Monoid: Semigroup {
 
 // MARK: - Foldable
 
-public protocol Foldable {
+protocol Foldable {
 	typealias T
 	func foldMap<M: Monoid>(f: T -> M) -> M
 }

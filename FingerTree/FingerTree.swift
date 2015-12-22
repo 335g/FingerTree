@@ -29,7 +29,6 @@ public enum FingerTree<V, A: Measurable where V == A.MeasuredValue>: FingerTreeT
 // MARK: - Map
 
 extension FingerTree {
-	
 	public func map<V1, A1: Measurable where V1 == A1.MeasuredValue>(f: A -> A1) -> FingerTree<V1, A1> {
 		switch self {
 		case .Empty:
@@ -76,7 +75,7 @@ extension FingerTree {
 // MARK: - Concatenation
 
 extension FingerTree {
-	public func appendTree0(tree: FingerTree) -> FingerTree {
+	func appendTree0(tree: FingerTree) -> FingerTree {
 		switch (self, tree) {
 		case (.Empty, _):
 			return tree
@@ -103,7 +102,7 @@ extension FingerTree {
 		}
 	}
 	
-	public func appendTree1(tree: FingerTree, _ a: A) -> FingerTree {
+	func appendTree1(tree: FingerTree, _ a: A) -> FingerTree {
 		switch (self, tree) {
 		case (.Empty, _):
 			return a <| tree
@@ -130,7 +129,7 @@ extension FingerTree {
 		}
 	}
 	
-	public func appendTree2(tree: FingerTree, _ a: A, _ b: A) -> FingerTree {
+	func appendTree2(tree: FingerTree, _ a: A, _ b: A) -> FingerTree {
 		switch (self, tree) {
 		case (.Empty, _):
 			return a <| b <| tree
@@ -156,7 +155,7 @@ extension FingerTree {
 		}
 	}
 	
-	public func appendTree3(tree: FingerTree, _ a: A, _ b: A, _ c: A) -> FingerTree {
+	func appendTree3(tree: FingerTree, _ a: A, _ b: A, _ c: A) -> FingerTree {
 		switch (self, tree) {
 		case (.Empty, _):
 			return a <| b <| c <| tree
@@ -183,7 +182,7 @@ extension FingerTree {
 		}
 	}
 	
-	public func appendTree4(tree: FingerTree, _ a: A, _ b: A, _ c: A, _ d: A) -> FingerTree {
+	func appendTree4(tree: FingerTree, _ a: A, _ b: A, _ c: A, _ d: A) -> FingerTree {
 		switch (self, tree) {
 		case (.Empty, _):
 			return a <| b <| c <| d <| tree
@@ -214,7 +213,7 @@ extension FingerTree {
 extension FingerTree where A: NodeType, V == A.Annotation.MeasuredValue {
 	typealias AA = A.Annotation
 	
-	public func addDigits0(tree: FingerTree, _ digit: Digit<AA>, _ digit1: Digit<AA>) -> FingerTree {
+	func addDigits0(tree: FingerTree, _ digit: Digit<AA>, _ digit1: Digit<AA>) -> FingerTree {
 		
 		switch digit {
 		case let .One(a):
@@ -311,7 +310,7 @@ extension FingerTree where A: NodeType, V == A.Annotation.MeasuredValue {
 		}
 	}
 	
-	public func addDigits1(tree: FingerTree, _ digit: Digit<AA>, _ a0: AA, _ digit1: Digit<AA>) -> FingerTree {
+	func addDigits1(tree: FingerTree, _ digit: Digit<AA>, _ a0: AA, _ digit1: Digit<AA>) -> FingerTree {
 		
 		switch digit {
 		case let .One(a):
@@ -413,7 +412,7 @@ extension FingerTree where A: NodeType, V == A.Annotation.MeasuredValue {
 		}
 	}
 	
-	public func addDigits2(tree: FingerTree, _ digit: Digit<AA>, _ a0: AA, _ b0: AA, _ digit1: Digit<AA>) -> FingerTree {
+	func addDigits2(tree: FingerTree, _ digit: Digit<AA>, _ a0: AA, _ b0: AA, _ digit1: Digit<AA>) -> FingerTree {
 		
 		switch digit {
 		case let .One(a):
@@ -521,7 +520,7 @@ extension FingerTree where A: NodeType, V == A.Annotation.MeasuredValue {
 		}
 	}
 	
-	public func addDigits3(tree: FingerTree, _ digit: Digit<AA>, _ a0: AA, _ b0: AA, _ c0: AA, _ digit1: Digit<AA>) -> FingerTree {
+	func addDigits3(tree: FingerTree, _ digit: Digit<AA>, _ a0: AA, _ b0: AA, _ c0: AA, _ digit1: Digit<AA>) -> FingerTree {
 		
 		switch digit {
 		case let .One(a):
@@ -634,7 +633,7 @@ extension FingerTree where A: NodeType, V == A.Annotation.MeasuredValue {
 		}
 	}
 	
-	public func addDigits4(tree: FingerTree, _ digit: Digit<AA>, _ a0: AA, _ b0: AA, _ c0: AA, _ d0: AA, _ digit1: Digit<AA>) -> FingerTree {
+	func addDigits4(tree: FingerTree, _ digit: Digit<AA>, _ a0: AA, _ b0: AA, _ c0: AA, _ d0: AA, _ digit1: Digit<AA>) -> FingerTree {
 		
 		switch digit {
 		case let .One(a):
@@ -918,7 +917,7 @@ extension FingerTree: Foldable {
 		}
 	}
 	
-	public func foldMap<M: Monoid>(f: A -> M) -> M {
+	func foldMap<M: Monoid>(f: A -> M) -> M {
 		switch self {
 		case .Empty:
 			return M.mempty
