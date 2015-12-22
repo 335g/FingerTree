@@ -4,7 +4,9 @@ public enum Split<T, A> {
 	case Split(T, A, T)
 }
 
-public func splitDigit<V, A: Measurable where V == A.MeasuredValue>(predicate: V -> Bool) -> V -> Digit<A> -> Split<Digit<A>?, A> {
+
+
+func splitDigit<V, A: Measurable where V == A.MeasuredValue>(predicate: V -> Bool) -> V -> Digit<A> -> Split<Digit<A>?, A> {
 	return { i in
 		{ digit in
 			switch digit {
@@ -50,7 +52,7 @@ public func splitDigit<V, A: Measurable where V == A.MeasuredValue>(predicate: V
 	}
 }
 
-public func splitNode<V, A>(predicate: V -> Bool) -> V -> Node<V, A> -> Split<Digit<A>?, A> {
+func splitNode<V, A>(predicate: V -> Bool) -> V -> Node<V, A> -> Split<Digit<A>?, A> {
 	return { i in
 		{ node in
 			switch node {
