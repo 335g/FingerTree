@@ -4,7 +4,64 @@ public enum Split<T, A> {
 	case Split(T, A, T)
 }
 
+func splitTree<V, A: Measurable where V == A.MeasuredValue>(predicate: V -> Bool) -> V -> FingerTree<V, A> -> Split<FingerTree<V, A>, A> {
+	return { i in
+		{ tree in
+			switch tree {
+			case .Empty:
+				// TODO: Remove fatalError
+				fatalError()
+				
+			case let .Single(a):
+				return .Split(.Empty, a, .Empty)
+			
+			case let .Deep(_, pre, m, suf):
+				let vpr = i.mappend(pre.measure())
+				let vm = m.mappendVal(vpr)
+				
+				if predicate(vpr) {
+					switch splitDigit(predicate)(i)(pre) {
+					case let .Split(l, x, r):
+						if let leftToTree = l?.tree {
+							return .Split(leftToTree, x, deepL(r)(m)(suf))
+						}else {
+							return .Split(.Empty, x, deepL(r)(m)(suf))
+						}
+					}
+					
+				}else if predicate(vm) {
+					switch splitTree(predicate)(vpr)(m) {
+					case let .Split(ml, xs, mr):
+						switch splitNode(predicate)(ml.mappendVal(vpr))(xs) {
+						case let .Split(l, x, r):
+							return .Split(deepR(pre)(ml)(l), x, deepL(r)(mr)(suf))
+						}
+					}
+					
+				}else {
+					switch splitDigit(predicate)(vm)(suf) {
+					case let .Split(l, x, r):
+						if let rightToTree = r?.tree {
+							return .Split(deepR(pre)(m)(l), x, rightToTree)
+						}else {
+							return .Split(deepR(pre)(m)(l), x, .Empty)
+						}
+					}
+				}
+			}
+		}
+	}
+}
 
+func deepL<V, A: Measurable where V == A.MeasuredValue>(digit: Digit<A>?) -> FingerTree<V, Node<V, A>> -> Digit<A> -> FingerTree<V, A> {
+	
+	fatalError()
+}
+
+func deepR<V, A: Measurable where V == A.MeasuredValue>(digit: Digit<A>) -> FingerTree<V, Node<V, A>> -> Digit<A>? -> FingerTree<V, A> {
+	
+	fatalError()
+}
 
 func splitDigit<V, A: Measurable where V == A.MeasuredValue>(predicate: V -> Bool) -> V -> Digit<A> -> Split<Digit<A>?, A> {
 	return { i in
