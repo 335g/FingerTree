@@ -26,18 +26,17 @@ public protocol Measurable {
 	func measure() -> MeasuredValue
 }
 
-// MARK: - WithMeasurableType
+// MARK: - NodeType
 
-public protocol WithMeasurableType {
+public protocol NodeType {
 	typealias Annotation: Measurable
 	typealias Value = Annotation.MeasuredValue
 }
 
-// MARK: - NodeType
-
-public protocol NodeType: WithMeasurableType {}
-
 // MARK: - FingerTreeType
 
-public protocol FingerTreeType: WithMeasurableType {}
+public protocol FingerTreeType {
+	typealias Annotation: Measurable
+	typealias Value = Annotation.MeasuredValue
+}
 
