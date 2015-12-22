@@ -127,6 +127,19 @@ extension Digit {
 			fatalError()
 		}
 	}
+	
+	func reverse<B>(f: A -> B) -> Digit<B> {
+		switch self {
+		case let .One(a):
+			return .One(f(a))
+		case let .Two(a, b):
+			return .Two(f(b), f(a))
+		case let .Three(a, b, c):
+			return .Three(f(c), f(b), f(a))
+		case let .Four(a, b, c, d):
+			return .Four(f(d), f(c), f(b), f(a))
+		}
+	}
 }
 
 // MARK: - Foldable
