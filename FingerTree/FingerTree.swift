@@ -61,7 +61,7 @@ extension Array where Element: Measurable {
 	public typealias V = Element.MeasuredValue
 	
 	public var fingerTree: FingerTree<V, Element> {
-		return reduce(.Empty){ $0.1 <| $0.0 }
+		return reduce(.Empty){ $0.0 |> $0.1 }
 	}
 }
 
