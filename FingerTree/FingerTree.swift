@@ -71,14 +71,14 @@ extension FingerTree {
 	public var list: Array<A> {
 		// TODO: fold with inout
 		
-		let add: A -> [A] -> [A] = { target in
-			{ list in
+		let append: [A] -> A -> [A] = { list in
+			{ target in
 				var copied = list
-				copied.insert(target, atIndex: 0)
+				copied.append(target)
 				return copied
 			}
 		}
-		return self.foldr([], add)
+		return self.foldl([], append)
 	}
 }
 
