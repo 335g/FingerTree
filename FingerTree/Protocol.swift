@@ -32,3 +32,10 @@ public protocol NodeType {
 	typealias Annotation: Measurable
 	typealias Value = Annotation.MeasuredValue
 }
+
+// MARK: - FingerTreeType
+
+public protocol FingerTreeType {
+	typealias Annotation: Measurable
+	typealias Value = Annotation.MeasuredValue
+}

@@ -2,7 +2,9 @@
 
 // MARK: - __ FingerTree __
 
-public enum FingerTree<V, A: Measurable where V == A.MeasuredValue> {
+public enum FingerTree<V, A: Measurable where V == A.MeasuredValue>: FingerTreeType {
+	public typealias Annotation = A
+	public typealias Value = V
 	
 	case Empty
 	case Single(A)
