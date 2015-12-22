@@ -43,8 +43,19 @@ extension Node {
 		switch self {
 		case let .Node2(_, a, b):
 			return .Two(a, b)
+			
 		case let .Node3(_, a, b, c):
 			return .Three(a, b, c)
+		}
+	}
+	
+	func reverse<V1, A1: Measurable where V1 == A1.MeasuredValue>(f: A -> A1) -> Node<V1, A1> {
+		switch self {
+		case let .Node2(_, a, b):
+			return Node<V1, A1>.node2(f(b), f(a))
+			
+		case let .Node3(_, a, b, c):
+			return Node<V1, A1>.node3(f(c), f(b), f(a))
 		}
 	}
 }
