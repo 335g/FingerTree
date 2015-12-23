@@ -75,6 +75,10 @@ extension FingerTree {
 // MARK: - Concatenation
 
 extension FingerTree {
+	public func append(tree: FingerTree) -> FingerTree {
+		return appendTree0(tree)
+	}
+	
 	func appendTree0(tree: FingerTree) -> FingerTree {
 		switch (self, tree) {
 		case (.Empty, _):
