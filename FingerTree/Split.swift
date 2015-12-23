@@ -55,12 +55,28 @@ func splitTree<V, A: Measurable where V == A.MeasuredValue>(predicate: V -> Bool
 
 func deepL<V, A: Measurable where V == A.MeasuredValue>(digit: Digit<A>?) -> FingerTree<V, Node<V, A>> -> Digit<A> -> FingerTree<V, A> {
 	
-	fatalError()
+	return { tree in
+		{ digit1 in
+			if let digit = digit {
+				return FingerTree.deep(prefix: digit, deeper: tree, suffix: digit1)
+			}else {
+				return rotL(tree)(digit1)
+			}
+		}
+	}
 }
 
 func deepR<V, A: Measurable where V == A.MeasuredValue>(digit: Digit<A>) -> FingerTree<V, Node<V, A>> -> Digit<A>? -> FingerTree<V, A> {
 	
-	fatalError()
+	return { tree in
+		{ digit1 in
+			if let digit1 = digit1 {
+				return FingerTree.deep(prefix: digit, deeper: tree, suffix: digit1)
+			}else {
+				return rotR(digit)(tree)
+			}
+		}
+	}
 }
 
 func splitDigit<V, A: Measurable where V == A.MeasuredValue>(predicate: V -> Bool) -> V -> Digit<A> -> Split<Digit<A>?, A> {
