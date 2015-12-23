@@ -22,4 +22,13 @@ final class NodeTests: XCTestCase {
 		
 		assertEqual(node.measure(), entry3.measure())
 	}
+	
+	func testNodeFoldMapMeasureProvidesSelfMeasuredValue(){
+		let entry1 = Entry<Int, String>(10, "a")
+		let entry2 = Entry<Int, String>(20, "b")
+		let entry3 = Entry<Int, String>(5, "c")
+		let node = Node.node3(entry1, entry2, entry3)
+		
+		assertEqual(node.foldMap({ $0.measure() }), node.measure())
+	}
 }
