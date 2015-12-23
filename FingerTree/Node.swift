@@ -11,11 +11,11 @@ public enum Node<V, A: Measurable where V == A.MeasuredValue>: NodeType {
 	
 	// MARK: static
 	
-	public static func node2(a: A, _ b: A) -> Node {
+	static func node2(a: A, _ b: A) -> Node {
 		return .Node2(a.measure().mappend(b.measure()), a, b)
 	}
 	
-	public static func node3(a: A, _ b: A, _ c: A) -> Node {
+	static func node3(a: A, _ b: A, _ c: A) -> Node {
 		return .Node3(a.measure().mappend(b.measure().mappend(c.measure())), a, b, c)
 	}
 }
@@ -24,7 +24,7 @@ public enum Node<V, A: Measurable where V == A.MeasuredValue>: NodeType {
 
 extension Node {
 	
-	public func map<V1, A1: Measurable where V1 == A1.MeasuredValue>(f: A -> A1) -> Node<V1, A1> {
+	func map<V1, A1: Measurable where V1 == A1.MeasuredValue>(f: A -> A1) -> Node<V1, A1> {
 		switch self {
 		case let .Node2(_, a, b):
 			return Node<V1, A1>.node2(f(a), f(b))

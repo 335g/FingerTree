@@ -5,4 +5,7 @@ import XCTest
 
 final class NodeTests: XCTestCase {
 	
+	func testStaticNode2ProvidesNodeWithMeasuredValue(){
+		
+	}
 }

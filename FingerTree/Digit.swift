@@ -13,7 +13,7 @@ public enum Digit<A: Measurable> {
 
 extension Digit {
 	
-	public func map<B>(f: A -> B) -> Digit<B> {
+	func map<B>(f: A -> B) -> Digit<B> {
 		switch self {
 		case let .One(a):
 			return .One(f(a))
