@@ -3,6 +3,6 @@
 import XCTest
 @testable import FingerTree
 
-final class FingerTreeTests: XCTestCase {
-    
+final class ViewTests: XCTestCase {
+	
 }

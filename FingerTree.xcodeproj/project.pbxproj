@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		842F1EDF1C29A880000804D3 /* Fixtures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842F1EDE1C29A880000804D3 /* Fixtures.swift */; };
+		842F1EE21C2A2EC7000804D3 /* DigitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842F1EE11C2A2EC7000804D3 /* DigitTests.swift */; };
+		842F1EE41C2A2F15000804D3 /* NodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842F1EE31C2A2F15000804D3 /* NodeTests.swift */; };
+		842F1EE61C2A2F50000804D3 /* OperatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842F1EE51C2A2F50000804D3 /* OperatorTests.swift */; };
+		842F1EE81C2A2F82000804D3 /* SplitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842F1EE71C2A2F82000804D3 /* SplitTests.swift */; };
+		842F1EEA1C2A2FAB000804D3 /* ViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842F1EE91C2A2FAB000804D3 /* ViewTests.swift */; };
 		847063FB1C2949FB00EDBBD0 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847063FA1C2949FB00EDBBD0 /* View.swift */; };
 		84A2EB2A1C24283100A8C3B9 /* FingerTree.h in Headers */ = {isa = PBXBuildFile; fileRef = 84A2EB291C24283100A8C3B9 /* FingerTree.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		84A2EB311C24283100A8C3B9 /* FingerTree.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A2EB261C24283100A8C3B9 /* FingerTree.framework */; };
@@ -32,6 +37,11 @@
 
 /* Begin PBXFileReference section */
 		842F1EDE1C29A880000804D3 /* Fixtures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fixtures.swift; sourceTree = "<group>"; };
+		842F1EE11C2A2EC7000804D3 /* DigitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DigitTests.swift; sourceTree = "<group>"; };
+		842F1EE31C2A2F15000804D3 /* NodeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NodeTests.swift; sourceTree = "<group>"; };
+		842F1EE51C2A2F50000804D3 /* OperatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperatorTests.swift; sourceTree = "<group>"; };
+		842F1EE71C2A2F82000804D3 /* SplitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplitTests.swift; sourceTree = "<group>"; };
+		842F1EE91C2A2FAB000804D3 /* ViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewTests.swift; sourceTree = "<group>"; };
 		847063FA1C2949FB00EDBBD0 /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		84A2EB261C24283100A8C3B9 /* FingerTree.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FingerTree.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84A2EB291C24283100A8C3B9 /* FingerTree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FingerTree.h; sourceTree = "<group>"; };
@@ -104,6 +114,11 @@
 			isa = PBXGroup;
 			children = (
 				84A2EB351C24283100A8C3B9 /* FingerTreeTests.swift */,
+				842F1EE11C2A2EC7000804D3 /* DigitTests.swift */,
+				842F1EE31C2A2F15000804D3 /* NodeTests.swift */,
+				842F1EE51C2A2F50000804D3 /* OperatorTests.swift */,
+				842F1EE71C2A2F82000804D3 /* SplitTests.swift */,
+				842F1EE91C2A2FAB000804D3 /* ViewTests.swift */,
 				842F1EDE1C29A880000804D3 /* Fixtures.swift */,
 				84A2EB371C24283100A8C3B9 /* Info.plist */,
 			);
@@ -233,7 +248,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				84A2EB361C24283100A8C3B9 /* FingerTreeTests.swift in Sources */,
+				842F1EE21C2A2EC7000804D3 /* DigitTests.swift in Sources */,
+				842F1EE81C2A2F82000804D3 /* SplitTests.swift in Sources */,
 				842F1EDF1C29A880000804D3 /* Fixtures.swift in Sources */,
+				842F1EE61C2A2F50000804D3 /* OperatorTests.swift in Sources */,
+				842F1EE41C2A2F15000804D3 /* NodeTests.swift in Sources */,
+				842F1EEA1C2A2FAB000804D3 /* ViewTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
