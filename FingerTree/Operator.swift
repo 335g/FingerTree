@@ -46,9 +46,9 @@ public func <| <V, A> (value: A, tree: FingerTree<V, A>) -> FingerTree<V, A> {
 		
 	case let .Single(a):
 		return FingerTree<V, A>.deep(
-			prefix: .One(a),
+			prefix: .One(value),
 			deeper: .Empty,
-			suffix: .One(value)
+			suffix: .One(a)
 		)
 
 	case let .Deep(v, prefix, deeper, suffix):
