@@ -39,6 +39,10 @@
 		84A2EB4B1C243A7700A8C3B9 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A2EB4A1C243A7700A8C3B9 /* Node.swift */; };
 		84A2EB531C25439300A8C3B9 /* Operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A2EB521C25439300A8C3B9 /* Operator.swift */; };
 		84C4B6C51C261CBF0077C1DA /* Split.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C4B6C41C261CBF0077C1DA /* Split.swift */; };
+		84F54B111C2AB26D0073B41D /* Assertions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84F54B101C2AB26D0073B41D /* Assertions.framework */; };
+		84F54B121C2AB2740073B41D /* Assertions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84F54B101C2AB26D0073B41D /* Assertions.framework */; };
+		84F54B141C2AB2A20073B41D /* Assertion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F54B131C2AB2A20073B41D /* Assertion.swift */; };
+		84F54B151C2AB2A20073B41D /* Assertion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F54B131C2AB2A20073B41D /* Assertion.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +84,8 @@
 		84A2EB4A1C243A7700A8C3B9 /* Node.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
 		84A2EB521C25439300A8C3B9 /* Operator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operator.swift; sourceTree = "<group>"; };
 		84C4B6C41C261CBF0077C1DA /* Split.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Split.swift; sourceTree = "<group>"; };
+		84F54B101C2AB26D0073B41D /* Assertions.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Assertions.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/FingerTree-brtijmbdbpzvincuyvjtjeshmkcl/Build/Products/Debug/Assertions.framework"; sourceTree = "<group>"; };
+		84F54B131C2AB2A20073B41D /* Assertion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assertion.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84F54B121C2AB2740073B41D /* Assertions.framework in Frameworks */,
 				8494004B1C2A6CDA0006552D /* FingerTree.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -109,6 +116,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84F54B111C2AB26D0073B41D /* Assertions.framework in Frameworks */,
 				84A2EB311C24283100A8C3B9 /* FingerTree.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -162,6 +170,8 @@
 				842F1EE71C2A2F82000804D3 /* SplitTests.swift */,
 				842F1EE91C2A2FAB000804D3 /* ViewTests.swift */,
 				842F1EDE1C29A880000804D3 /* Fixtures.swift */,
+				84F54B131C2AB2A20073B41D /* Assertion.swift */,
+				84F54B101C2AB26D0073B41D /* Assertions.framework */,
 				84A2EB371C24283100A8C3B9 /* Info.plist */,
 			);
 			path = FingerTreeTests;
@@ -359,6 +369,7 @@
 			files = (
 				849400601C2A6E2C0006552D /* FingerTreeTests.swift in Sources */,
 				849400611C2A6E2C0006552D /* DigitTests.swift in Sources */,
+				84F54B151C2AB2A20073B41D /* Assertion.swift in Sources */,
 				849400621C2A6E2C0006552D /* NodeTests.swift in Sources */,
 				849400631C2A6E2C0006552D /* OperatorTests.swift in Sources */,
 				849400641C2A6E2C0006552D /* SplitTests.swift in Sources */,
@@ -387,6 +398,7 @@
 			files = (
 				84A2EB361C24283100A8C3B9 /* FingerTreeTests.swift in Sources */,
 				842F1EE21C2A2EC7000804D3 /* DigitTests.swift in Sources */,
+				84F54B141C2AB2A20073B41D /* Assertion.swift in Sources */,
 				842F1EE81C2A2F82000804D3 /* SplitTests.swift in Sources */,
 				842F1EDF1C29A880000804D3 /* Fixtures.swift in Sources */,
 				842F1EE61C2A2F50000804D3 /* OperatorTests.swift in Sources */,
@@ -642,6 +654,7 @@
 				849400541C2A6CDA0006552D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		849400551C2A6CDA0006552D /* Build configuration list for PBXNativeTarget "FingerTree-iOSTests" */ = {
 			isa = XCConfigurationList;
@@ -650,6 +663,7 @@
 				849400571C2A6CDA0006552D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		84A2EB201C24283100A8C3B9 /* Build configuration list for PBXProject "FingerTree" */ = {
 			isa = XCConfigurationList;
