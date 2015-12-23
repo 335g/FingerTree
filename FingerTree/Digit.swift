@@ -194,3 +194,20 @@ extension Digit: Measurable {
 		return foldMap({ $0.measure() })
 	}
 }
+
+// MARK: - Equatable
+
+func == <A: Equatable>(lhs: Digit<A>, rhs: Digit<A>) -> Bool {
+	switch (lhs, rhs) {
+	case let (.One(a1), .One(a2)):
+		return a1 == a2
+	case let (.Two(a1, b1), .Two(a2, b2)):
+		return a1 == a2 && b1 == b2
+	case let (.Three(a1, b1, c1), .Three(a2, b2, c2)):
+		return a1 == a2 && b1 == b2 && c1 == c2
+	case let (.Four(a1, b1, c1, d1), .Four(a2, b2, c2, d2)):
+		return a1 == a2 && b1 == b2 && c1 == c2 && d1 == d2
+	default:
+		return false
+	}
+}
