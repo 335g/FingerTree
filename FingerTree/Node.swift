@@ -105,16 +105,3 @@ extension Node: Measurable {
 		}
 	}
 }
-
-// MARK: - Equatable
-
-func == <V: Equatable, A: Equatable>(lhs: Node<V, A>, rhs: Node<V, A>) -> Bool {
-	switch (lhs, rhs) {
-	case let (.Node2(v1, a1, b1), .Node2(v2, a2, b2)):
-		return v1 == v2 && a1 == a2 && b1 == b2
-	case let (.Node3(v1, a1, b1, c1), .Node3(v2, a2, b2, c2)):
-		return v1 == v2 && a1 == a2 && b1 == b2 && c1 == c2
-	default:
-		return false
-	}
-}
