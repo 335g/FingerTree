@@ -273,12 +273,14 @@
 				TargetAttributes = {
 					849400401C2A6CDA0006552D = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 6SLQZACQ63;
 					};
 					849400491C2A6CDA0006552D = {
 						CreatedOnToolsVersion = 7.2;
 					};
 					84A2EB251C24283100A8C3B9 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 6SLQZACQ63;
 					};
 					84A2EB2F1C24283100A8C3B9 = {
 						CreatedOnToolsVersion = 7.2;
@@ -412,6 +414,7 @@
 		849400531C2A6CDA0006552D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -432,6 +435,7 @@
 		849400541C2A6CDA0006552D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -567,6 +571,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -588,6 +593,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
