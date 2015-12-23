@@ -69,3 +69,12 @@ func assertEqual<V, A: Equatable>(lhs: Priority<V, A>, _ rhs: Priority<V, A>, _ 
 		return
 	}
 }
+
+infix operator <> {
+	associativity right
+	precedence 160
+}
+
+func <> <S: Semigroup>(lhs: S, rhs: S) -> S {
+	return lhs.mappend(rhs)
+}
