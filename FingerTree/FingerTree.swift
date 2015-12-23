@@ -21,7 +21,7 @@ public enum FingerTree<V, A: Measurable where V == A.MeasuredValue>: FingerTreeT
 	}
 	
 	public static func deep(prefix prefix: Digit<A>, deeper: FingerTree<V, Node<V, A>>, suffix: Digit<A>) -> FingerTree {
-		return .Deep(deeper.mappendVal(prefix.measure()), prefix, deeper, suffix)
+		return .Deep(deeper.mappendVal(prefix.measure()).mappend(suffix.measure()), prefix, deeper, suffix)
 	}
 	
 }
