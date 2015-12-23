@@ -4,5 +4,5 @@ import XCTest
 @testable import FingerTree
 
 final class FingerTreeTests: XCTestCase {
-    
+	
 }

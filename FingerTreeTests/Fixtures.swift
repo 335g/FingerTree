@@ -27,3 +27,4 @@ infix operator <> {
 func <> <S: Semigroup>(lhs: S, rhs: S) -> S {
 	return lhs.mappend(rhs)
 }
+

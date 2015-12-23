@@ -2,5 +2,5 @@
 
 import XCTest
 import Assertions
-
+@testable import FingerTree
 

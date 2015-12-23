@@ -5,5 +5,4 @@ import XCTest
 
 final class NodeTests: XCTestCase {
 	
-	
 }
