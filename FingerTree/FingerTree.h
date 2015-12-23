@@ -6,7 +6,7 @@
 //  Copyright © 2015年 Yoshiki Kudo. All rights reserved.
 //
 
-#import <Cocoa/Cocoa.h>
+#import <Foundation/Foundation.h>
 
 //! Project version number for FingerTree.
 FOUNDATION_EXPORT double FingerTreeVersionNumber;

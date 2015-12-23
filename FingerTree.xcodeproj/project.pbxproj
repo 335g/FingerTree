@@ -14,7 +14,22 @@
 		842F1EE81C2A2F82000804D3 /* SplitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842F1EE71C2A2F82000804D3 /* SplitTests.swift */; };
 		842F1EEA1C2A2FAB000804D3 /* ViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842F1EE91C2A2FAB000804D3 /* ViewTests.swift */; };
 		847063FB1C2949FB00EDBBD0 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847063FA1C2949FB00EDBBD0 /* View.swift */; };
-		849400391C2A5B9F0006552D /* Assertions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 849400381C2A5B9F0006552D /* Assertions.framework */; };
+		8494004B1C2A6CDA0006552D /* FingerTree.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 849400411C2A6CDA0006552D /* FingerTree.framework */; };
+		849400581C2A6D540006552D /* FingerTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A2EB401C2428F500A8C3B9 /* FingerTree.swift */; };
+		849400591C2A6D540006552D /* Digit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A2EB481C243A4800A8C3B9 /* Digit.swift */; };
+		8494005A1C2A6D540006552D /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A2EB4A1C243A7700A8C3B9 /* Node.swift */; };
+		8494005B1C2A6D540006552D /* Operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A2EB521C25439300A8C3B9 /* Operator.swift */; };
+		8494005C1C2A6D540006552D /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A2EB441C24316600A8C3B9 /* Protocol.swift */; };
+		8494005D1C2A6D540006552D /* Split.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C4B6C41C261CBF0077C1DA /* Split.swift */; };
+		8494005E1C2A6D540006552D /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847063FA1C2949FB00EDBBD0 /* View.swift */; };
+		8494005F1C2A6D880006552D /* FingerTree.h in Headers */ = {isa = PBXBuildFile; fileRef = 84A2EB291C24283100A8C3B9 /* FingerTree.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		849400601C2A6E2C0006552D /* FingerTreeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A2EB351C24283100A8C3B9 /* FingerTreeTests.swift */; };
+		849400611C2A6E2C0006552D /* DigitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842F1EE11C2A2EC7000804D3 /* DigitTests.swift */; };
+		849400621C2A6E2C0006552D /* NodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842F1EE31C2A2F15000804D3 /* NodeTests.swift */; };
+		849400631C2A6E2C0006552D /* OperatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842F1EE51C2A2F50000804D3 /* OperatorTests.swift */; };
+		849400641C2A6E2C0006552D /* SplitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842F1EE71C2A2F82000804D3 /* SplitTests.swift */; };
+		849400651C2A6E2C0006552D /* ViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842F1EE91C2A2FAB000804D3 /* ViewTests.swift */; };
+		849400661C2A6E2C0006552D /* Fixtures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842F1EDE1C29A880000804D3 /* Fixtures.swift */; };
 		84A2EB2A1C24283100A8C3B9 /* FingerTree.h in Headers */ = {isa = PBXBuildFile; fileRef = 84A2EB291C24283100A8C3B9 /* FingerTree.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		84A2EB311C24283100A8C3B9 /* FingerTree.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A2EB261C24283100A8C3B9 /* FingerTree.framework */; };
 		84A2EB361C24283100A8C3B9 /* FingerTreeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A2EB351C24283100A8C3B9 /* FingerTreeTests.swift */; };
@@ -27,6 +42,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		8494004C1C2A6CDA0006552D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84A2EB1D1C24283100A8C3B9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 849400401C2A6CDA0006552D;
+			remoteInfo = "FingerTree-iOS";
+		};
 		84A2EB321C24283100A8C3B9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 84A2EB1D1C24283100A8C3B9 /* Project object */;
@@ -44,11 +66,12 @@
 		842F1EE71C2A2F82000804D3 /* SplitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplitTests.swift; sourceTree = "<group>"; };
 		842F1EE91C2A2FAB000804D3 /* ViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewTests.swift; sourceTree = "<group>"; };
 		847063FA1C2949FB00EDBBD0 /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
-		849400381C2A5B9F0006552D /* Assertions.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Assertions.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/FingerTree-brtijmbdbpzvincuyvjtjeshmkcl/Build/Products/Debug/Assertions.framework"; sourceTree = "<group>"; };
+		849400411C2A6CDA0006552D /* FingerTree.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FingerTree.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8494004A1C2A6CDA0006552D /* FingerTree-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "FingerTree-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84A2EB261C24283100A8C3B9 /* FingerTree.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FingerTree.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84A2EB291C24283100A8C3B9 /* FingerTree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FingerTree.h; sourceTree = "<group>"; };
 		84A2EB2B1C24283100A8C3B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		84A2EB301C24283100A8C3B9 /* FingerTreeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FingerTreeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		84A2EB301C24283100A8C3B9 /* FingerTree-MacTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "FingerTree-MacTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84A2EB351C24283100A8C3B9 /* FingerTreeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FingerTreeTests.swift; sourceTree = "<group>"; };
 		84A2EB371C24283100A8C3B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84A2EB401C2428F500A8C3B9 /* FingerTree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FingerTree.swift; sourceTree = "<group>"; };
@@ -60,6 +83,21 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		8494003D1C2A6CDA0006552D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		849400471C2A6CDA0006552D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8494004B1C2A6CDA0006552D /* FingerTree.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		84A2EB221C24283100A8C3B9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -71,7 +109,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				849400391C2A5B9F0006552D /* Assertions.framework in Frameworks */,
 				84A2EB311C24283100A8C3B9 /* FingerTree.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -79,14 +116,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8494003A1C2A5BAA0006552D /* Framework */ = {
-			isa = PBXGroup;
-			children = (
-				849400381C2A5B9F0006552D /* Assertions.framework */,
-			);
-			name = Framework;
-			sourceTree = "<group>";
-		};
 		84A2EB1C1C24283100A8C3B9 = {
 			isa = PBXGroup;
 			children = (
@@ -100,7 +129,9 @@
 			isa = PBXGroup;
 			children = (
 				84A2EB261C24283100A8C3B9 /* FingerTree.framework */,
-				84A2EB301C24283100A8C3B9 /* FingerTreeTests.xctest */,
+				84A2EB301C24283100A8C3B9 /* FingerTree-MacTests.xctest */,
+				849400411C2A6CDA0006552D /* FingerTree.framework */,
+				8494004A1C2A6CDA0006552D /* FingerTree-iOSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -131,7 +162,6 @@
 				842F1EE71C2A2F82000804D3 /* SplitTests.swift */,
 				842F1EE91C2A2FAB000804D3 /* ViewTests.swift */,
 				842F1EDE1C29A880000804D3 /* Fixtures.swift */,
-				8494003A1C2A5BAA0006552D /* Framework */,
 				84A2EB371C24283100A8C3B9 /* Info.plist */,
 			);
 			path = FingerTreeTests;
@@ -140,6 +170,14 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		8494003E1C2A6CDA0006552D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8494005F1C2A6D880006552D /* FingerTree.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		84A2EB231C24283100A8C3B9 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -151,9 +189,45 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		84A2EB251C24283100A8C3B9 /* FingerTree */ = {
+		849400401C2A6CDA0006552D /* FingerTree-iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 84A2EB3A1C24283100A8C3B9 /* Build configuration list for PBXNativeTarget "FingerTree" */;
+			buildConfigurationList = 849400521C2A6CDA0006552D /* Build configuration list for PBXNativeTarget "FingerTree-iOS" */;
+			buildPhases = (
+				8494003C1C2A6CDA0006552D /* Sources */,
+				8494003D1C2A6CDA0006552D /* Frameworks */,
+				8494003E1C2A6CDA0006552D /* Headers */,
+				8494003F1C2A6CDA0006552D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "FingerTree-iOS";
+			productName = "FingerTree-iOS";
+			productReference = 849400411C2A6CDA0006552D /* FingerTree.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		849400491C2A6CDA0006552D /* FingerTree-iOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 849400551C2A6CDA0006552D /* Build configuration list for PBXNativeTarget "FingerTree-iOSTests" */;
+			buildPhases = (
+				849400461C2A6CDA0006552D /* Sources */,
+				849400471C2A6CDA0006552D /* Frameworks */,
+				849400481C2A6CDA0006552D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8494004D1C2A6CDA0006552D /* PBXTargetDependency */,
+			);
+			name = "FingerTree-iOSTests";
+			productName = "FingerTree-iOSTests";
+			productReference = 8494004A1C2A6CDA0006552D /* FingerTree-iOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		84A2EB251C24283100A8C3B9 /* FingerTree-Mac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84A2EB3A1C24283100A8C3B9 /* Build configuration list for PBXNativeTarget "FingerTree-Mac" */;
 			buildPhases = (
 				84A2EB211C24283100A8C3B9 /* Sources */,
 				84A2EB221C24283100A8C3B9 /* Frameworks */,
@@ -164,14 +238,14 @@
 			);
 			dependencies = (
 			);
-			name = FingerTree;
+			name = "FingerTree-Mac";
 			productName = FingerTree;
 			productReference = 84A2EB261C24283100A8C3B9 /* FingerTree.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		84A2EB2F1C24283100A8C3B9 /* FingerTreeTests */ = {
+		84A2EB2F1C24283100A8C3B9 /* FingerTree-MacTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 84A2EB3D1C24283100A8C3B9 /* Build configuration list for PBXNativeTarget "FingerTreeTests" */;
+			buildConfigurationList = 84A2EB3D1C24283100A8C3B9 /* Build configuration list for PBXNativeTarget "FingerTree-MacTests" */;
 			buildPhases = (
 				84A2EB2C1C24283100A8C3B9 /* Sources */,
 				84A2EB2D1C24283100A8C3B9 /* Frameworks */,
@@ -182,9 +256,9 @@
 			dependencies = (
 				84A2EB331C24283100A8C3B9 /* PBXTargetDependency */,
 			);
-			name = FingerTreeTests;
+			name = "FingerTree-MacTests";
 			productName = FingerTreeTests;
-			productReference = 84A2EB301C24283100A8C3B9 /* FingerTreeTests.xctest */;
+			productReference = 84A2EB301C24283100A8C3B9 /* FingerTree-MacTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -197,6 +271,12 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Yoshiki Kudo";
 				TargetAttributes = {
+					849400401C2A6CDA0006552D = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					849400491C2A6CDA0006552D = {
+						CreatedOnToolsVersion = 7.2;
+					};
 					84A2EB251C24283100A8C3B9 = {
 						CreatedOnToolsVersion = 7.2;
 					};
@@ -217,13 +297,29 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				84A2EB251C24283100A8C3B9 /* FingerTree */,
-				84A2EB2F1C24283100A8C3B9 /* FingerTreeTests */,
+				84A2EB251C24283100A8C3B9 /* FingerTree-Mac */,
+				84A2EB2F1C24283100A8C3B9 /* FingerTree-MacTests */,
+				849400401C2A6CDA0006552D /* FingerTree-iOS */,
+				849400491C2A6CDA0006552D /* FingerTree-iOSTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		8494003F1C2A6CDA0006552D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		849400481C2A6CDA0006552D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		84A2EB241C24283100A8C3B9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -241,17 +337,45 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		8494003C1C2A6CDA0006552D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				849400581C2A6D540006552D /* FingerTree.swift in Sources */,
+				849400591C2A6D540006552D /* Digit.swift in Sources */,
+				8494005A1C2A6D540006552D /* Node.swift in Sources */,
+				8494005B1C2A6D540006552D /* Operator.swift in Sources */,
+				8494005C1C2A6D540006552D /* Protocol.swift in Sources */,
+				8494005D1C2A6D540006552D /* Split.swift in Sources */,
+				8494005E1C2A6D540006552D /* View.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		849400461C2A6CDA0006552D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				849400601C2A6E2C0006552D /* FingerTreeTests.swift in Sources */,
+				849400611C2A6E2C0006552D /* DigitTests.swift in Sources */,
+				849400621C2A6E2C0006552D /* NodeTests.swift in Sources */,
+				849400631C2A6E2C0006552D /* OperatorTests.swift in Sources */,
+				849400641C2A6E2C0006552D /* SplitTests.swift in Sources */,
+				849400651C2A6E2C0006552D /* ViewTests.swift in Sources */,
+				849400661C2A6E2C0006552D /* Fixtures.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		84A2EB211C24283100A8C3B9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84A2EB451C24316600A8C3B9 /* Protocol.swift in Sources */,
-				84A2EB4B1C243A7700A8C3B9 /* Node.swift in Sources */,
-				84C4B6C51C261CBF0077C1DA /* Split.swift in Sources */,
 				84A2EB411C2428F500A8C3B9 /* FingerTree.swift in Sources */,
 				84A2EB491C243A4800A8C3B9 /* Digit.swift in Sources */,
-				847063FB1C2949FB00EDBBD0 /* View.swift in Sources */,
+				84A2EB4B1C243A7700A8C3B9 /* Node.swift in Sources */,
 				84A2EB531C25439300A8C3B9 /* Operator.swift in Sources */,
+				84A2EB451C24316600A8C3B9 /* Protocol.swift in Sources */,
+				84C4B6C51C261CBF0077C1DA /* Split.swift in Sources */,
+				847063FB1C2949FB00EDBBD0 /* View.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,14 +396,87 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		8494004D1C2A6CDA0006552D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 849400401C2A6CDA0006552D /* FingerTree-iOS */;
+			targetProxy = 8494004C1C2A6CDA0006552D /* PBXContainerItemProxy */;
+		};
 		84A2EB331C24283100A8C3B9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 84A2EB251C24283100A8C3B9 /* FingerTree */;
+			target = 84A2EB251C24283100A8C3B9 /* FingerTree-Mac */;
 			targetProxy = 84A2EB321C24283100A8C3B9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		849400531C2A6CDA0006552D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = FingerTree/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jp.335g.FingerTree;
+				PRODUCT_NAME = "$(PROJECT_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		849400541C2A6CDA0006552D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = FingerTree/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jp.335g.FingerTree;
+				PRODUCT_NAME = "$(PROJECT_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		849400561C2A6CDA0006552D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = FingerTreeTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.335g.FingerTree-iOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		849400571C2A6CDA0006552D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = FingerTreeTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.335g.FingerTree-iOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		84A2EB381C24283100A8C3B9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -375,16 +572,13 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Checkouts/Prelude/build/Debug",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = FingerTree/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jp.335g.FingerTree;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "$(PROJECT_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -399,16 +593,13 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Checkouts/Prelude/build/Debug",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = FingerTree/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jp.335g.FingerTree;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "$(PROJECT_NAME)";
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -438,6 +629,22 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		849400521C2A6CDA0006552D /* Build configuration list for PBXNativeTarget "FingerTree-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				849400531C2A6CDA0006552D /* Debug */,
+				849400541C2A6CDA0006552D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		849400551C2A6CDA0006552D /* Build configuration list for PBXNativeTarget "FingerTree-iOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				849400561C2A6CDA0006552D /* Debug */,
+				849400571C2A6CDA0006552D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		84A2EB201C24283100A8C3B9 /* Build configuration list for PBXProject "FingerTree" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -447,7 +654,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		84A2EB3A1C24283100A8C3B9 /* Build configuration list for PBXNativeTarget "FingerTree" */ = {
+		84A2EB3A1C24283100A8C3B9 /* Build configuration list for PBXNativeTarget "FingerTree-Mac" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				84A2EB3B1C24283100A8C3B9 /* Debug */,
@@ -456,7 +663,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		84A2EB3D1C24283100A8C3B9 /* Build configuration list for PBXNativeTarget "FingerTreeTests" */ = {
+		84A2EB3D1C24283100A8C3B9 /* Build configuration list for PBXNativeTarget "FingerTree-MacTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				84A2EB3E1C24283100A8C3B9 /* Debug */,
