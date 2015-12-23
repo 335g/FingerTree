@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "EAAFB4D7483D0AD5F3D18560AA48120A9EED5EE6",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "840BFB2A2F183FC5B01E0B21BB0D3D8EF3F6803F" : 0,
+    "EAAFB4D7483D0AD5F3D18560AA48120A9EED5EE6" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "749D3CAA-90FA-49E8-B2AD-61AFB6025DC5",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "840BFB2A2F183FC5B01E0B21BB0D3D8EF3F6803F" : "FingerTree\/Carthage\/Checkouts\/Assertions\/",
+    "EAAFB4D7483D0AD5F3D18560AA48120A9EED5EE6" : "FingerTree\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "FingerTree",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "FingerTree.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/antitypical\/Assertions.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "840BFB2A2F183FC5B01E0B21BB0D3D8EF3F6803F"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:335g\/FingerTree.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "EAAFB4D7483D0AD5F3D18560AA48120A9EED5EE6"
+    }
+  ]
+}

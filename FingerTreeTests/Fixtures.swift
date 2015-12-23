@@ -2,6 +2,7 @@
 
 import Foundation
 @testable import FingerTree
+import Assertions
 
 enum Entry<V: Comparable, A> {
 	case Ent(V, A)
@@ -54,5 +55,17 @@ func == <V, A: Equatable>(lhs: Priority<V, A>, rhs: Priority<V, A>) -> Bool {
 		return v1 == v2 && a1 == a2
 	default:
 		return false
+	}
+}
+
+func assertEqual<V, A: Equatable>(lhs: Priority<V, A>, _ rhs: Priority<V, A>, _ message: String = "", _ file: String = __FILE__, _ line: UInt = __LINE__) {
+	
+	switch (lhs, rhs) {
+	case (.NoPrio, .NoPrio):
+		return
+	case let (.Prio(_, a1), .Prio(_, a2)):
+		assertEqual(a1, a2)
+	default:
+		return
 	}
 }

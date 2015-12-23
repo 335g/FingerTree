@@ -14,6 +14,7 @@
 		842F1EE81C2A2F82000804D3 /* SplitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842F1EE71C2A2F82000804D3 /* SplitTests.swift */; };
 		842F1EEA1C2A2FAB000804D3 /* ViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842F1EE91C2A2FAB000804D3 /* ViewTests.swift */; };
 		847063FB1C2949FB00EDBBD0 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847063FA1C2949FB00EDBBD0 /* View.swift */; };
+		849400391C2A5B9F0006552D /* Assertions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 849400381C2A5B9F0006552D /* Assertions.framework */; };
 		84A2EB2A1C24283100A8C3B9 /* FingerTree.h in Headers */ = {isa = PBXBuildFile; fileRef = 84A2EB291C24283100A8C3B9 /* FingerTree.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		84A2EB311C24283100A8C3B9 /* FingerTree.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A2EB261C24283100A8C3B9 /* FingerTree.framework */; };
 		84A2EB361C24283100A8C3B9 /* FingerTreeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A2EB351C24283100A8C3B9 /* FingerTreeTests.swift */; };
@@ -43,6 +44,7 @@
 		842F1EE71C2A2F82000804D3 /* SplitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplitTests.swift; sourceTree = "<group>"; };
 		842F1EE91C2A2FAB000804D3 /* ViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewTests.swift; sourceTree = "<group>"; };
 		847063FA1C2949FB00EDBBD0 /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		849400381C2A5B9F0006552D /* Assertions.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Assertions.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/FingerTree-brtijmbdbpzvincuyvjtjeshmkcl/Build/Products/Debug/Assertions.framework"; sourceTree = "<group>"; };
 		84A2EB261C24283100A8C3B9 /* FingerTree.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FingerTree.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84A2EB291C24283100A8C3B9 /* FingerTree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FingerTree.h; sourceTree = "<group>"; };
 		84A2EB2B1C24283100A8C3B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				849400391C2A5B9F0006552D /* Assertions.framework in Frameworks */,
 				84A2EB311C24283100A8C3B9 /* FingerTree.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -76,6 +79,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8494003A1C2A5BAA0006552D /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+				849400381C2A5B9F0006552D /* Assertions.framework */,
+			);
+			name = Framework;
+			sourceTree = "<group>";
+		};
 		84A2EB1C1C24283100A8C3B9 = {
 			isa = PBXGroup;
 			children = (
@@ -120,6 +131,7 @@
 				842F1EE71C2A2F82000804D3 /* SplitTests.swift */,
 				842F1EE91C2A2FAB000804D3 /* ViewTests.swift */,
 				842F1EDE1C29A880000804D3 /* Fixtures.swift */,
+				8494003A1C2A5BAA0006552D /* Framework */,
 				84A2EB371C24283100A8C3B9 /* Info.plist */,
 			);
 			path = FingerTreeTests;
