@@ -1,6 +1,8 @@
 //  Copyright © 2015 Yoshiki Kudo. All rights reserved.
 
-// MARK: - __ FingerTree __
+import Prelude
+
+// MARK: - FingerTree
 
 public enum FingerTree<V, A: Measurable where V == A.MeasuredValue>: FingerTreeType {
 	public typealias Annotation = A
@@ -26,7 +28,7 @@ public enum FingerTree<V, A: Measurable where V == A.MeasuredValue>: FingerTreeT
 	
 }
 
-// MARK: - Map
+// MARK: FingerTree : Functor
 
 extension FingerTree {
 	public func map<V1, A1: Measurable where V1 == A1.MeasuredValue>(f: A -> A1) -> FingerTree<V1, A1> {
@@ -45,7 +47,7 @@ extension FingerTree {
 	}
 }
 
-// MARK: - Construction
+// MARK: - FingerTree _ Construction
 
 extension Array where Element: Measurable {
 	public typealias V = Element.MeasuredValue
@@ -55,7 +57,7 @@ extension Array where Element: Measurable {
 	}
 }
 
-// MARK: - Deconstruction
+// MARK: - FingerTree _ Deconstruction
 
 extension FingerTree {
 	public var list: Array<A> {
@@ -72,7 +74,7 @@ extension FingerTree {
 	}
 }
 
-// MARK: - Concatenation
+// MARK: - FingerTree _ Concatenation
 
 extension FingerTree {
 	public func append(tree: FingerTree) -> FingerTree {
@@ -756,7 +758,7 @@ extension FingerTree where A: NodeType, V == A.Annotation.MeasuredValue {
 	}
 }
 
-// MARK: - Split
+// MARK: - FingerTree _ Split
 
 extension FingerTree {
 	public func split(predicate: V -> Bool) -> (FingerTree, FingerTree) {
@@ -785,7 +787,7 @@ extension FingerTree {
 	}
 }
 
-// MARK: - Reverse
+// MARK: - FingerTree _ Reverse
 
 extension FingerTree {
 	public var reverse: FingerTree {
@@ -807,7 +809,7 @@ extension FingerTree {
 	}
 }
 
-// MARK: - View
+// MARK: - FingerTree _ View
 
 extension FingerTree {
 	public var viewl: ViewLeft<V, A> {
@@ -869,7 +871,7 @@ func rotR<V, A: Measurable where V == A.MeasuredValue>(pre: Digit<A>) -> FingerT
 	}
 }
 
-// MARK: - Other
+// MARK: - FingerTree _ Other
 
 extension FingerTree {
 	func mappendVal(v: V) -> V {
@@ -883,11 +885,11 @@ extension FingerTree {
 	}
 }
 
-// MARK: - Foldable
+// MARK: - FingerTree : Foldable
 
 extension FingerTree: Foldable {
 	
-	func foldr<B>(initial: B, _ f: A -> B -> B) -> B {
+	public func foldr<B>(initial: B, _ f: A -> B -> B) -> B {
 		switch self {
 		case .Empty:
 			return initial
@@ -935,7 +937,7 @@ extension FingerTree: Foldable {
 	}
 }
 
-// MARK: - Measurable
+// MARK: - FingerTree : Measurable
 
 extension FingerTree: Measurable {
 	public typealias MeasuredValue = V
@@ -955,7 +957,7 @@ extension FingerTree: Measurable {
 	}
 }
 
-// MARK: - Semigroup
+// MARK: - FingerTree : Semigroup
 
 extension FingerTree: Semigroup {
 	public func mappend(other: FingerTree) -> FingerTree {
@@ -963,7 +965,7 @@ extension FingerTree: Semigroup {
 	}
 }
 
-// MARK: - Monoid
+// MARK: - FingerTree : Monoid
 
 extension FingerTree: Monoid {
 	public static var mempty: FingerTree {
@@ -971,7 +973,7 @@ extension FingerTree: Monoid {
 	}
 }
 
-// MARK: - Equatable
+// MARK: - FingerTree : Equatable
 
 public func == <V, A: Equatable>(lhs: FingerTree<V, A>, rhs: FingerTree<V, A>) -> Bool {
 	return lhs.list == rhs.list

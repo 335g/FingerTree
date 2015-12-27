@@ -1,6 +1,8 @@
 //  Copyright © 2015 Yoshiki Kudo. All rights reserved.
 
-// MARK: - __ Digit __
+import Prelude
+
+// MARK: - Digit
 
 public enum Digit<A: Measurable> {
 	case One(A)
@@ -9,7 +11,7 @@ public enum Digit<A: Measurable> {
 	case Four(A, A, A, A)
 }
 
-// MARK: - Map
+// MARK: - Digit : Functor
 
 extension Digit {
 	
@@ -30,7 +32,7 @@ extension Digit {
 	}
 }
 
-// MARK: - Transformation
+// MARK: Digit _ Transformation
 
 extension Digit {
 	typealias V = A.MeasuredValue
@@ -142,11 +144,11 @@ extension Digit {
 	}
 }
 
-// MARK: - Foldable
+// MARK: Digit : Foldable
 
 extension Digit: Foldable {
 	
-	func foldr<B>(initial: B, _ f: A -> B -> B) -> B {
+	public func foldr<B>(initial: B, _ f: A -> B -> B) -> B {
 		switch self {
 		case let .One(a):
 			return f(a)(initial)
@@ -185,7 +187,7 @@ extension Digit: Foldable {
 	}
 }
 
-// MARK: - Measurable
+// MARK: Digit : Measurable
 
 extension Digit: Measurable {
 	public typealias MeasuredValue = A.MeasuredValue

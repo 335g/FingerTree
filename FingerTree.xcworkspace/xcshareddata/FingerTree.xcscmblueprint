@@ -4,13 +4,17 @@
 
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "EAAFB4D7483D0AD5F3D18560AA48120A9EED5EE6" : 0,
     "840BFB2A2F183FC5B01E0B21BB0D3D8EF3F6803F" : 0,
-    "EAAFB4D7483D0AD5F3D18560AA48120A9EED5EE6" : 0
+    "E7D0F6DE7B0DD6F81CD7698305582DE29F275CF9" : 0,
+    "BF525588FCA7342ADD9F45276E83F583365C76AF" : 0
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "749D3CAA-90FA-49E8-B2AD-61AFB6025DC5",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "EAAFB4D7483D0AD5F3D18560AA48120A9EED5EE6" : "FingerTree\/",
     "840BFB2A2F183FC5B01E0B21BB0D3D8EF3F6803F" : "FingerTree\/Carthage\/Checkouts\/Assertions\/",
-    "EAAFB4D7483D0AD5F3D18560AA48120A9EED5EE6" : "FingerTree\/"
+    "E7D0F6DE7B0DD6F81CD7698305582DE29F275CF9" : "FingerTree\/Carthage\/Checkouts\/Prelude\/",
+    "BF525588FCA7342ADD9F45276E83F583365C76AF" : "Tsumugi\/Carthage\/Checkouts\/Typewriter\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "FingerTree",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
@@ -20,6 +24,16 @@
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/antitypical\/Assertions.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "840BFB2A2F183FC5B01E0B21BB0D3D8EF3F6803F"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/335g\/Typewriter.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "BF525588FCA7342ADD9F45276E83F583365C76AF"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/335g\/Prelude.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "E7D0F6DE7B0DD6F81CD7698305582DE29F275CF9"
     },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:335g\/FingerTree.git",

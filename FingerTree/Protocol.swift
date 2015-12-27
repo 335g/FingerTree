@@ -1,23 +1,6 @@
 //  Copyright © 2015 Yoshiki Kudo. All rights reserved.
 
-// MARK: - Semigroup
-
-public protocol Semigroup {
-	func mappend(other: Self) -> Self
-}
-
-// MARK: - Monoid
-
-public protocol Monoid: Semigroup {
-	static var mempty: Self { get }
-}
-
-// MARK: - Foldable
-
-protocol Foldable {
-	typealias T
-	func foldMap<M: Monoid>(f: T -> M) -> M
-}
+import Prelude
 
 // MARK: - Measurable
 

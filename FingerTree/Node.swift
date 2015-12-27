@@ -1,6 +1,8 @@
 //  Copyright © 2015 Yoshiki Kudo. All rights reserved.
 
-// MARK: - __ Node __
+import Prelude
+
+// MARK: - Node
 
 public enum Node<V, A: Measurable where V == A.MeasuredValue>: NodeType {
 	public typealias Value = V
@@ -20,7 +22,7 @@ public enum Node<V, A: Measurable where V == A.MeasuredValue>: NodeType {
 	}
 }
 
-// MARK: - Map
+// MARK: - Node : Functor
 
 extension Node {
 	
@@ -35,7 +37,7 @@ extension Node {
 	}
 }
 
-// MARK: - Transformation
+// MARK: - Node _ Transformation
 
 extension Node {
 	
@@ -60,10 +62,10 @@ extension Node {
 	}
 }
 
-// MARK: - Foldable
+// MARK: - Node : Foldable
 
 extension Node: Foldable {
-	func foldr<B>(initial: B, _ f: A -> B -> B) -> B {
+	public func foldr<B>(initial: B, _ f: A -> B -> B) -> B {
 		switch self {
 		case let .Node2(_, a, b):
 			return f(a)(f(b)(initial))
@@ -90,7 +92,7 @@ extension Node: Foldable {
 	}
 }
 
-// MARK: - Measurable
+// MARK: - Node : Measurable
 
 extension Node: Measurable {
 	public typealias MeasuredValue = V

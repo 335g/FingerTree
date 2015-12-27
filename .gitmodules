@@ -1,3 +1,6 @@
 [submodule "Carthage/Checkouts/Assertions"]
 	path = Carthage/Checkouts/Assertions
 	url = https://github.com/antitypical/Assertions.git
+[submodule "Carthage/Checkouts/Prelude"]
+	path = Carthage/Checkouts/Prelude
+	url = https://github.com/335g/Prelude.git

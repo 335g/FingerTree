@@ -11,6 +11,9 @@
       location = "group:FingerTree.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:Carthage/Checkouts/Prelude/Prelude.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Carthage/Checkouts/Assertions/Assertions.xcodeproj">
    </FileRef>
 </Workspace>
