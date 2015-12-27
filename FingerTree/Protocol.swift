@@ -11,7 +11,7 @@ public protocol Measurable {
 
 // MARK: - NodeType
 
-public protocol NodeType {
+public protocol NodeType: Measurable, Foldable {
 	typealias Annotation: Measurable
 	typealias Value = Annotation.MeasuredValue
 }

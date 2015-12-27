@@ -64,7 +64,7 @@ extension Node {
 
 // MARK: - Node : Foldable
 
-extension Node: Foldable {
+public extension Node {
 	public func foldr<B>(initial: B, _ f: A -> B -> B) -> B {
 		switch self {
 		case let .Node2(_, a, b):
@@ -94,7 +94,7 @@ extension Node: Foldable {
 
 // MARK: - Node : Measurable
 
-extension Node: Measurable {
+public extension Node {
 	public typealias MeasuredValue = V
 	
 	public func measure() -> MeasuredValue {
