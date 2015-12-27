@@ -30,7 +30,7 @@ public enum FingerTree<V, A: Measurable where V == A.MeasuredValue>: FingerTreeT
 
 // MARK: FingerTree : Functor
 
-extension FingerTree {
+public extension FingerTree {
 	public func map<V1, A1: Measurable where V1 == A1.MeasuredValue>(f: A -> A1) -> FingerTree<V1, A1> {
 		switch self {
 		case .Empty:
@@ -49,7 +49,7 @@ extension FingerTree {
 
 // MARK: - FingerTree _ Construction
 
-extension Array where Element: Measurable {
+public extension Array where Element: Measurable {
 	public typealias V = Element.MeasuredValue
 	
 	public var fingerTree: FingerTree<V, Element> {
@@ -59,7 +59,7 @@ extension Array where Element: Measurable {
 
 // MARK: - FingerTree _ Deconstruction
 
-extension FingerTree {
+public extension FingerTree {
 	public var list: Array<A> {
 		// TODO: fold with inout
 		
@@ -76,12 +76,12 @@ extension FingerTree {
 
 // MARK: - FingerTree _ Concatenation
 
-extension FingerTree {
+public extension FingerTree {
 	public func append(tree: FingerTree) -> FingerTree {
 		return appendTree0(tree)
 	}
 	
-	func appendTree0(tree: FingerTree) -> FingerTree {
+	internal func appendTree0(tree: FingerTree) -> FingerTree {
 		switch (self, tree) {
 		case (.Empty, _):
 			return tree
@@ -108,7 +108,7 @@ extension FingerTree {
 		}
 	}
 	
-	func appendTree1(tree: FingerTree, _ a: A) -> FingerTree {
+	internal func appendTree1(tree: FingerTree, _ a: A) -> FingerTree {
 		switch (self, tree) {
 		case (.Empty, _):
 			return a <| tree
@@ -135,7 +135,7 @@ extension FingerTree {
 		}
 	}
 	
-	func appendTree2(tree: FingerTree, _ a: A, _ b: A) -> FingerTree {
+	internal func appendTree2(tree: FingerTree, _ a: A, _ b: A) -> FingerTree {
 		switch (self, tree) {
 		case (.Empty, _):
 			return a <| b <| tree
@@ -161,7 +161,7 @@ extension FingerTree {
 		}
 	}
 	
-	func appendTree3(tree: FingerTree, _ a: A, _ b: A, _ c: A) -> FingerTree {
+	internal func appendTree3(tree: FingerTree, _ a: A, _ b: A, _ c: A) -> FingerTree {
 		switch (self, tree) {
 		case (.Empty, _):
 			return a <| b <| c <| tree
@@ -188,7 +188,7 @@ extension FingerTree {
 		}
 	}
 	
-	func appendTree4(tree: FingerTree, _ a: A, _ b: A, _ c: A, _ d: A) -> FingerTree {
+	internal func appendTree4(tree: FingerTree, _ a: A, _ b: A, _ c: A, _ d: A) -> FingerTree {
 		switch (self, tree) {
 		case (.Empty, _):
 			return a <| b <| c <| d <| tree
@@ -760,7 +760,7 @@ extension FingerTree where A: NodeType, V == A.Annotation.MeasuredValue {
 
 // MARK: - FingerTree _ Split
 
-extension FingerTree {
+public extension FingerTree {
 	public func split(predicate: V -> Bool) -> (FingerTree, FingerTree) {
 		switch self {
 		case .Empty:
@@ -789,7 +789,7 @@ extension FingerTree {
 
 // MARK: - FingerTree _ Reverse
 
-extension FingerTree {
+public extension FingerTree {
 	public var reverse: FingerTree {
 		return self.reverse({ $0 })
 	}
@@ -811,7 +811,7 @@ extension FingerTree {
 
 // MARK: - FingerTree _ View
 
-extension FingerTree {
+public extension FingerTree {
 	public var viewl: ViewLeft<V, A> {
 		switch self {
 		case .Empty:
@@ -887,7 +887,7 @@ extension FingerTree {
 
 // MARK: - FingerTree : Foldable
 
-extension FingerTree: Foldable {
+public extension FingerTree {
 	
 	public func foldr<B>(initial: B, _ f: A -> B -> B) -> B {
 		switch self {
@@ -939,7 +939,7 @@ extension FingerTree: Foldable {
 
 // MARK: - FingerTree : Measurable
 
-extension FingerTree: Measurable {
+public extension FingerTree {
 	public typealias MeasuredValue = V
 	
 	public func measure() -> MeasuredValue {
@@ -959,7 +959,7 @@ extension FingerTree: Measurable {
 
 // MARK: - FingerTree : Semigroup
 
-extension FingerTree: Semigroup {
+public extension FingerTree {
 	public func mappend(other: FingerTree) -> FingerTree {
 		return appendTree0(other)
 	}
@@ -967,7 +967,7 @@ extension FingerTree: Semigroup {
 
 // MARK: - FingerTree : Monoid
 
-extension FingerTree: Monoid {
+public extension FingerTree {
 	public static var mempty: FingerTree {
 		return .Empty
 	}

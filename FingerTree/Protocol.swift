@@ -18,7 +18,7 @@ public protocol NodeType {
 
 // MARK: - FingerTreeType
 
-public protocol FingerTreeType {
+public protocol FingerTreeType: Measurable, Foldable, Monoid {
 	typealias Annotation: Measurable
 	typealias Value = Annotation.MeasuredValue
 }
