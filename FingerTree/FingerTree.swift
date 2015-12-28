@@ -45,6 +45,17 @@ public extension FingerTree {
 			)
 		}
 	}
+	
+	public func unsafeMap<A1: Measurable where V == A1.MeasuredValue>(f: A -> A1) -> FingerTree<V, A1> {
+		switch self {
+		case .Empty:
+			return .Empty
+		case let .Single(a):
+			return .Single(f(a))
+		case let .Deep(v, pre, m, suf):
+			return .Deep(v, pre.map(f), m.unsafeMap({ $0.map(f) }), suf.map(f))
+		}
+	}
 }
 
 // MARK: - FingerTree _ Construction

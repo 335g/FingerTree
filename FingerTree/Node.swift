@@ -35,6 +35,15 @@ extension Node {
 			return Node<V1, A1>.node3(f(a), f(b), f(c))
 		}
 	}
+	
+	func unsafeMap<A1: Measurable where V == A1.MeasuredValue>(f: A -> A1) -> Node<V, A1> {
+		switch self {
+		case let .Node2(v, a, b):
+			return Node<V, A1>.Node2(v, f(a), f(b))
+		case let .Node3(v, a, b, c):
+			return Node<V, A1>.Node3(v, f(a), f(b), f(c))
+		}
+	}
 }
 
 // MARK: - Node _ Transformation
