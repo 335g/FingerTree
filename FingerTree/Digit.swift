@@ -148,7 +148,7 @@ extension Digit {
 
 extension Digit: Foldable {
 	
-	public func foldr<B>(initial: B, _ f: A -> B -> B) -> B {
+	func foldr<B>(initial: B, _ f: A -> B -> B) -> B {
 		switch self {
 		case let .One(a):
 			return f(a)(initial)
@@ -180,7 +180,7 @@ extension Digit: Foldable {
 		}
 	}
 	
-	func foldMap<M : Monoid>(f: A -> M) -> M {
+	public func foldMap<M : Monoid>(f: A -> M) -> M {
 		return foldl(M.mempty){ m in
 			{ m.mappend(f($0)) }
 		}
