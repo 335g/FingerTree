@@ -131,12 +131,6 @@ final class FingerTreeTests: XCTestCase {
 	func testFingerTreeSplitProduceSplittedTrees(){
 		let e1 = Entry<Int, String>((1, "a"))
 		let e2 = Entry<Int, String>((2, "b"))
-		let e3 = Entry<Int, String>((3, "c"))
-		let e4 = Entry<Int, String>((4, "d"))
-		let e5 = Entry<Int, String>((5, "e"))
-		let e6 = Entry<Int, String>((6, "f"))
-		let e7 = Entry<Int, String>((7, "g"))
-		let e8 = Entry<Int, String>((8, "h"))
 		
 		let empty: FingerTree<Prio<Int, String>, Entry<Int, String>> = .Empty
 		
@@ -170,13 +164,5 @@ final class FingerTreeTests: XCTestCase {
 		assert(trees22.0, ==, empty)
 		assert(trees22.1, ==, empty |> e1 |> e2)
 		
-		///
-		///
-		///
-		let tree30: FingerTree<Prio<Int, String>, Entry<Int, String>> = empty |> e2 |> e3 |> e4 |> e5 |> e6 |> e7 |> e8 |> e1
-		
-		let trees30 = tree30.split({ $0 == tree30.measure() })
-		//assert(trees30.0, ==, empty |> e2 |> e3 |> e4 |> e4 |> e5 |> e6 |> e7 |> e8)
-		//assert(trees30.1, ==, empty |> e2 |> e3 |> e4 |> e4 |> e5 |> e6 |> e7 |> e8 |> e1)
 	}
 }
