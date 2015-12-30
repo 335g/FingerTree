@@ -165,4 +165,14 @@ final class FingerTreeTests: XCTestCase {
 		assert(trees22.1, ==, empty |> e1 |> e2)
 		
 	}
+	
+	func testFinterTreeReverseProduceReversedTree(){
+		let e1 = Entry<Int, String>((1, "a"))
+		let e2 = Entry<Int, String>((2, "b"))
+		
+		let tree: FingerTree<Prio<Int, String>, Entry<Int, String>> = .Single(e1) |> e2
+		let reversed = tree.reverse(id)
+		
+		assert(reversed, ==, .Single(e2) |> e1)
+	}
 }
