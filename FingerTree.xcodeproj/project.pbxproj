@@ -13,6 +13,8 @@
 		842F1EE61C2A2F50000804D3 /* OperatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842F1EE51C2A2F50000804D3 /* OperatorTests.swift */; };
 		842F1EE81C2A2F82000804D3 /* SplitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842F1EE71C2A2F82000804D3 /* SplitTests.swift */; };
 		842F1EEA1C2A2FAB000804D3 /* ViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842F1EE91C2A2FAB000804D3 /* ViewTests.swift */; };
+		844A3B1D1C32FBE3001FB11D /* Prelude.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84F8D9B41C2FD49000C5A0E9 /* Prelude.framework */; };
+		844A3B1E1C32FBEC001FB11D /* Prelude.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84F8D9B41C2FD49000C5A0E9 /* Prelude.framework */; };
 		847063FB1C2949FB00EDBBD0 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847063FA1C2949FB00EDBBD0 /* View.swift */; };
 		8494004B1C2A6CDA0006552D /* FingerTree.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 849400411C2A6CDA0006552D /* FingerTree.framework */; };
 		849400581C2A6D540006552D /* FingerTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A2EB401C2428F500A8C3B9 /* FingerTree.swift */; };
@@ -39,8 +41,8 @@
 		84A2EB4B1C243A7700A8C3B9 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A2EB4A1C243A7700A8C3B9 /* Node.swift */; };
 		84A2EB531C25439300A8C3B9 /* Operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A2EB521C25439300A8C3B9 /* Operator.swift */; };
 		84C4B6C51C261CBF0077C1DA /* Split.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C4B6C41C261CBF0077C1DA /* Split.swift */; };
-		84F54B111C2AB26D0073B41D /* Assertions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84F54B101C2AB26D0073B41D /* Assertions.framework */; };
-		84F54B121C2AB2740073B41D /* Assertions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84F54B101C2AB26D0073B41D /* Assertions.framework */; };
+		84D412FF1C33848B004D3882 /* Assertions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84D412FE1C33848B004D3882 /* Assertions.framework */; };
+		84D413001C338490004D3882 /* Assertions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84D412FE1C33848B004D3882 /* Assertions.framework */; };
 		84F54B141C2AB2A20073B41D /* Assertion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F54B131C2AB2A20073B41D /* Assertion.swift */; };
 		84F54B151C2AB2A20073B41D /* Assertion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F54B131C2AB2A20073B41D /* Assertion.swift */; };
 		84F8D9B51C2FD49000C5A0E9 /* Prelude.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84F8D9B41C2FD49000C5A0E9 /* Prelude.framework */; };
@@ -86,7 +88,7 @@
 		84A2EB4A1C243A7700A8C3B9 /* Node.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
 		84A2EB521C25439300A8C3B9 /* Operator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operator.swift; sourceTree = "<group>"; };
 		84C4B6C41C261CBF0077C1DA /* Split.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Split.swift; sourceTree = "<group>"; };
-		84F54B101C2AB26D0073B41D /* Assertions.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Assertions.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/FingerTree-brtijmbdbpzvincuyvjtjeshmkcl/Build/Products/Debug/Assertions.framework"; sourceTree = "<group>"; };
+		84D412FE1C33848B004D3882 /* Assertions.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Assertions.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/FingerTree-brtijmbdbpzvincuyvjtjeshmkcl/Build/Products/Debug/Assertions.framework"; sourceTree = "<group>"; };
 		84F54B131C2AB2A20073B41D /* Assertion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assertion.swift; sourceTree = "<group>"; };
 		84F8D9B41C2FD49000C5A0E9 /* Prelude.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Prelude.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/FingerTree-brtijmbdbpzvincuyvjtjeshmkcl/Build/Products/Debug/Prelude.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -104,7 +106,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84F54B121C2AB2740073B41D /* Assertions.framework in Frameworks */,
+				84D413001C338490004D3882 /* Assertions.framework in Frameworks */,
+				844A3B1D1C32FBE3001FB11D /* Prelude.framework in Frameworks */,
 				8494004B1C2A6CDA0006552D /* FingerTree.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -121,7 +124,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84F54B111C2AB26D0073B41D /* Assertions.framework in Frameworks */,
+				84D412FF1C33848B004D3882 /* Assertions.framework in Frameworks */,
+				844A3B1E1C32FBEC001FB11D /* Prelude.framework in Frameworks */,
 				84A2EB311C24283100A8C3B9 /* FingerTree.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -160,6 +164,7 @@
 				84A2EB441C24316600A8C3B9 /* Protocol.swift */,
 				84C4B6C41C261CBF0077C1DA /* Split.swift */,
 				847063FA1C2949FB00EDBBD0 /* View.swift */,
+				84D412FE1C33848B004D3882 /* Assertions.framework */,
 				84F8D9B41C2FD49000C5A0E9 /* Prelude.framework */,
 				84A2EB2B1C24283100A8C3B9 /* Info.plist */,
 			);
@@ -177,7 +182,6 @@
 				842F1EE91C2A2FAB000804D3 /* ViewTests.swift */,
 				842F1EDE1C29A880000804D3 /* Fixtures.swift */,
 				84F54B131C2AB2A20073B41D /* Assertion.swift */,
-				84F54B101C2AB26D0073B41D /* Assertions.framework */,
 				84A2EB371C24283100A8C3B9 /* Info.plist */,
 			);
 			path = FingerTreeTests;
