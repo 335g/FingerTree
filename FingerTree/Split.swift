@@ -130,7 +130,8 @@ func splitNode<V, A>(predicate: V -> Bool) -> V -> Node<V, A> -> Split<Digit<A>?
 		{ node in
 			switch node {
 			case let .Node2(_, a, b):
-				if predicate(i.mappend(a.measure())) {
+				let va = i.mappend(a.measure())
+				if predicate(va) {
 					return .Split(nil, a, .One(b))
 				}else {
 					return .Split(.One(a), b, nil)

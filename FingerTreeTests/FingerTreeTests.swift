@@ -108,5 +108,75 @@ final class FingerTreeTests: XCTestCase {
 		assert(tree2, ==, .Deep(.Priority(0, "a"), .One(e2), .Empty, .Three(e3, e4, e1)))
 	}
 	
+	func testFingerTreeAppendProduceAppendedTree(){
+		let e1 = Entry<Int, String>((1, "a"))
+		let e2 = Entry<Int, String>((2, "b"))
+		let e3 = Entry<Int, String>((3, "c"))
+		let e4 = Entry<Int, String>((4, "d"))
+		
+		let empty: FingerTree<Prio<Int, String>, Entry<Int, String>> = .Empty
+		let tree1: FingerTree<Prio<Int, String>, Entry<Int, String>> = .Single(e1)
+		
+		assert(empty.append(tree1), ==, tree1)
+		assert(tree1.append(empty), ==, tree1)
+		
+		let tree2: FingerTree<Prio<Int, String>, Entry<Int, String>> = .Single(e2)
+		assert(tree1.append(tree2), ==, .Empty |> e1 |> e2)
+		assert(tree2.append(tree1), ==, .Empty |> e2 |> e1)
+		
+		let tree3: FingerTree<Prio<Int, String>, Entry<Int, String>> = .Empty |> e3 |> e4
+		assert(tree2.append(tree3), ==, tree2 |> e3 |> e4)
+	}
 	
+	func testFingerTreeSplitProduceSplittedTrees(){
+		let e1 = Entry<Int, String>((1, "a"))
+		let e2 = Entry<Int, String>((2, "b"))
+		let e3 = Entry<Int, String>((3, "c"))
+		let e4 = Entry<Int, String>((4, "d"))
+		let e5 = Entry<Int, String>((5, "e"))
+		let e6 = Entry<Int, String>((6, "f"))
+		let e7 = Entry<Int, String>((7, "g"))
+		let e8 = Entry<Int, String>((8, "h"))
+		
+		let empty: FingerTree<Prio<Int, String>, Entry<Int, String>> = .Empty
+		
+		let trees00 = empty.split({ $0 == empty.measure() })
+		assert(trees00.0, ==, .Empty)
+		assert(trees00.1, ==, .Empty)
+		
+		///
+		///	    Single(e1)
+		///
+		let tree10: FingerTree<Prio<Int, String>, Entry<Int, String>> = empty |> e1
+		
+		let trees10 = tree10.split({ $0 == empty.measure() })
+		assert(trees10.0, ==, empty |> e1)
+		assert(trees10.1, ==, empty)
+		
+		let trees11 = tree10.split({ $0 == tree10.measure() })
+		assert(trees11.0, ==, empty)
+		assert(trees11.1, ==, empty |> e1)
+		
+		///
+		///     One(e1), .Empty, One(e2)
+		///
+		let tree20: FingerTree<Prio<Int, String>, Entry<Int, String>> = empty |> e1 |> e2
+		
+		let trees21 = tree20.split({ $0 == e2.measure() })
+		assert(trees21.0, ==, empty |> e1 |> e2)
+		assert(trees21.1, ==, empty)
+		
+		let trees22 = tree20.split({ $0 == tree20.measure() })
+		assert(trees22.0, ==, empty)
+		assert(trees22.1, ==, empty |> e1 |> e2)
+		
+		///
+		///
+		///
+		let tree30: FingerTree<Prio<Int, String>, Entry<Int, String>> = empty |> e2 |> e3 |> e4 |> e5 |> e6 |> e7 |> e8 |> e1
+		
+		let trees30 = tree30.split({ $0 == tree30.measure() })
+		//assert(trees30.0, ==, empty |> e2 |> e3 |> e4 |> e4 |> e5 |> e6 |> e7 |> e8)
+		//assert(trees30.1, ==, empty |> e2 |> e3 |> e4 |> e4 |> e5 |> e6 |> e7 |> e8 |> e1)
+	}
 }

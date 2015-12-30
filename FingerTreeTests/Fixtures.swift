@@ -60,30 +60,15 @@ func == <K, V: Equatable>(lhs: FingerTree<Prio<K, V>, Entry<K, V>>, rhs: FingerT
 	return zipped.reduce(true){ $0 && ($1.0 == $1.1) }
 }
 
-struct PQueue<K: Comparable, V>: Monoid {
-	let queue: FingerTree<Prio<K, V>, Entry<K, V>>
-	
-	init(_ x: FingerTree<Prio<K, V>, Entry<K, V>>){
-		queue = x
-	}
-}
-
-extension PQueue {
-	static var mempty: PQueue {
-		return PQueue<K, V>.empty()
-	}
-	
-	func mappend(other: PQueue) -> PQueue {
-		return self.union(other)
-	}
-}
-
-extension PQueue {
-	static func empty() -> PQueue {
-		return PQueue<K, V>(FingerTree.empty())
-	}
-	
-	func union(other: PQueue) -> PQueue {
-		return PQueue(self.queue.append(other.queue))
+func == <K, V: Equatable>(lhs: Prio<K, V>, rhs: Prio<K, V>) -> Bool {
+	switch (lhs, rhs) {
+	case (.NoPriority, .NoPriority):
+		return true
+	case (.NoPriority, .Priority(_, _)):
+		return false
+	case (.Priority(_, _), .NoPriority()):
+		return false
+	case let (.Priority(k1, v1), .Priority(k2, v2)):
+		return k1 == k2 && v1 == v2
 	}
 }
